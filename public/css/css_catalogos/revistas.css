@@ -1,0 +1,159 @@
+
+/*CONTENT*/
+.container {
+    margin: 20px;
+}
+
+#MAG {
+    padding: 10px 60px;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 30px;
+    width: auto;
+}
+
+.row {
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+    text-align: center;
+    margin: 5px;
+}
+
+.image {
+    display: inline-block;
+    position: relative;
+    max-width: 250px;
+    flex: 1;
+    margin: 10px;
+    padding: 2px 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.img__content {
+    width: 250px;
+    border: 6px solid #bb8c91;
+    border-radius: 5px;
+}
+
+.image .img__content {
+    opacity: 0.8;
+    vertical-align: top;
+    transition-property: opacity;
+}
+
+.image:hover .img__content {
+    opacity: 1;
+    border: 6px solid #38586b;
+    transition: all 0.6s;
+}
+
+/*Tablets*/
+@media only screen and (max-width: 768px) {
+
+    .top-nav-submenu {
+        z-index: 300;
+    }
+
+    .top-nav-menu li a {
+        text-align: center;
+        align-content: center;
+    }
+
+    .middle_navbar {
+        width: 90%;
+    }
+
+    .middle_submenu li a {
+        display: inline;
+    }
+
+    .middle_submenu>li {
+        width: inherit;
+    }
+
+    .middle_submenu>a {
+        padding: 0;
+    }
+
+    .text-submenu {
+        text-align: center;
+    }
+
+    .editorial_cucsh {
+        width: 100%;
+    }
+
+    .search-space .search-box .input {
+        width: 12%;
+    }
+
+    .row {
+        align-content: center;
+        text-align: center;
+    }
+
+    .footer_img {
+        width: 160px;
+        height: auto;
+    }
+
+    .footer_text {
+        font-size: 10px;
+    }
+}
+
+/*PHONE*/
+@media only screen and (max-width: 426px) {
+
+    .top-nav {
+        height: 10%;
+    }
+
+    .top-nav-menu>li>a {
+        display: inline-block;
+        font-size: 10px;
+        padding-right: 5px;
+    }
+
+    .top-nav-submenu {
+        font-size: 9px;
+    }
+
+    .text-submenu {
+        font-size: 8px;
+    }
+
+    .editorial_cucsh {
+        width: 100%;
+        padding: 0;
+    }
+
+    .mid_menu {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+
+    .mid_menu li a {
+        padding: 5px 10px;
+    }
+
+    #MAG {
+        padding-left: 5px;
+    }
+
+    .footer_text {
+        font-size: 8px;
+    }
+}
+
+/*Mobile S*/
+@media only screen and (max-width: 426px) {
+    .top-nav-menu>li>a{
+        font-size: 8px;
+    }
+}

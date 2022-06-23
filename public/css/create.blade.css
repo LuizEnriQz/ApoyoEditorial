@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.title {
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+.box {
+    background-color: #eedede;
+
+}
+
+h5 {
+    padding-top: 10px;
+}
+
