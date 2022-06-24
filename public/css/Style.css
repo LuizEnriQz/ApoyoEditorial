@@ -31,6 +31,11 @@ body {
     background: #fff;
 }
 
+.footer {
+    margin-top: auto;
+    background: #303030;
+}
+
 /*HEADER*/
 /*-----MENU TOP-----*/
 /*Ajustes de tamaño y color*/
@@ -353,12 +358,6 @@ h2 {
 }
 
 /*-----FOOTER-----*/
-.footer {
-    background: #303030;
-    width: 100%;
-    display: inline-block;
-    margin-top: auto;
-}
 
 .footer_img {
     width: 300px;

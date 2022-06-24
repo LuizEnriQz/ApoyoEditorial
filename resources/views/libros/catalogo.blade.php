@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+@include('layouts.sub-menu')
 <div class="container">
     <div class="container">
         <h5>LIBROS</h5>

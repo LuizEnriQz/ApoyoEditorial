@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+@include('layouts.sub-menu')
 <div class="container ">
     <h5>NOVEDADES</h5>
     <div class="row">
