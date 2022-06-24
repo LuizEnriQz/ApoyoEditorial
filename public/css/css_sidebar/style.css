@@ -6,6 +6,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 p {
@@ -114,8 +117,7 @@ a[data-toggle="collapse"] {
 
 ul ul a {
     font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #adc8d5ff;
+    text-decoration: none !important;
 }
 
 ul.CTAs {

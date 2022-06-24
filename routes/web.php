@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,12 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('admindash');
+    if(Auth::check() && (Auth::user()->role == 'admin')){
+        return view('admindash');
+    }else{
+        return redirect()->route('home');
+    }
+    
 })->name('dashboard');
 
 Auth::routes();
