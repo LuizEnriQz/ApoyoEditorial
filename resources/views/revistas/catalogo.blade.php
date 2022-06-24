@@ -51,44 +51,18 @@
    <div class="container flex-fluid">
        <div class="row">
 
+            @foreach($revistas as $rev)
            <div class="col-md-3">
               <div class="card" style="width: 15rem;">
-                <img src="{{asset('img/novedades/img/1.jpg')}}" alt="...">
-                   <div class="d-grid gap-2">
-                  <a href="{{route('visitante.leerRevista', 1 )}}" class="btn btn-primary">Leer Documento</a>
+                <img src="{{ "/editorial/storage/app/public/revistas_portada/" . $rev->portada }}" alt="...">
+                    <div class="d-grid gap-2">
+                   <a href="{{route('visitante.leerRevista', [$rev->id, $rev->file ] )}}" class="btn btn-primary">Leer Documento</a>
+
                   <a href="#" class="btn btn-info">Descargar Documento</a>
                    </div>
               </div>
            </div>
-
-           <div class="col-md-3">
-              <div class="card" style="width: 15rem;">
-                <img src="{{asset('img/novedades/img/1.jpg')}}" alt="...">
-                  <a href="#" class="btn btn-primary">Leer Documento</a>
-              </div>
-           </div>
-
-           <div class="col-md-3">
-              <div class="card" style="width: 15rem;">
-                <img src="{{asset('img/novedades/img/1.jpg')}}" alt="...">
-                  <a href="#" class="btn btn-primary">Leer Documento</a>
-              </div>
-           </div>
-
-           <div class="col-md-3">
-              <div class="card" style="width: 15rem;">
-                <img src="{{asset('img/novedades/img/1.jpg')}}" alt="...">
-                  <a href="#" class="btn btn-primary">Leer Documento</a>
-              </div>
-           </div>
-
-           <div class="col-md-3">
-              <div class="card" style="width: 15rem;">
-                <img src="{{asset('img/novedades/img/1.jpg')}}" alt="...">
-                  <a href="#" class="btn btn-primary">Leer Documento</a>
-              </div>
-           </div>
-
+           @endforeach
        </div>
    </div>
 </body>

@@ -21,16 +21,6 @@ class NoticiaController extends Controller
         return view('noticias.index')->with('noticias',$tnoticia);
     }
 
-    public function catalogo()
-    {
-        return view('noticias.catalogo');
-    }
-
-    public function visitas()
-    {
-        return view('noticias.visitas');
-    }
-
     public function cargaDT($consulta)
     {
         $noticias = [];
@@ -67,6 +57,51 @@ class NoticiaController extends Controller
     }
         return $noticias;
     }
+
+    public function catalogo()
+    {
+        $noticias= Noticia::get();
+        return view('noticias.catalogo')->with('noticias',$noticias);
+    }
+
+    public function visitas()
+    {
+        $noticias = Noticia::where('activo','=',1)->get();
+        $vnoticia = $this->cargaDTvisitas($noticias);
+        return view('noticias.visitas')->with('noticias',$vnoticia);
+    }
+
+    public function cargaDTvisitas($consulta)
+    {
+        $noticia = [];
+
+        foreach ($consulta as $key => $value){
+            $eliminar = route('borrarNoticia', $value['id']);
+            $edit = route('noticias.edit', $value['id']);
+            $acciones = '';
+            if (Auth::Check() && Auth::user()->role == 'admin'){
+            $acciones = '
+            <div class="btn-acciones">
+                <div class= "col-md-sm2">
+                <i class="fa-solid fa-eye"> = </i>
+                <i class="fa-solid fa-download"> = </i>
+                </div>
+            </div>
+            ';
+        }
+
+            $noticia[$key] = array(
+                $value['id'],
+                $value['titulo'],
+                $value['descripcion'],
+                $value['file'],
+
+                $acciones,
+            );
+        }
+        return $noticia;
+    }
+
 
     public function mostrarpdf($id)
     {

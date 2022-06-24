@@ -42,7 +42,7 @@
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
 
 <script>
-    var data = @json($colecciones);
+    var data = @json($libros);
     $(document).ready(function() {
         $('#example').DataTable( {
             "data": data,

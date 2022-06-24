@@ -73,9 +73,10 @@ class ColeccionController extends Controller
 
     public function visitas()
     {
-    $colecciones = Coleccion::where('activo','=',1)->get();
-    $vcoleccion = $this->cargaDTvisitas($colecciones);
-    return  view('colecciones.visitas')->with('colecciones',$vcoleccion);    }
+        $colecciones = Coleccion::where('activo','=',1)->get();
+        $vcoleccion = $this->cargaDTvisitas($colecciones);
+        return  view('colecciones.visitas')->with('colecciones',    $vcoleccion);
+    }
 
 
     public function cargaDTvisitas($consulta)

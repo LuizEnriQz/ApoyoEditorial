@@ -167,26 +167,18 @@ Route::get('/visitasRevistas', array(
 //Rutas del usuario visitante para el conteo de de vistas y descargas
 
 Route::get('/leerNovedad/{id}/{nombre_archivo}', array(
-    //'as'=> 'mostrarRevista',
-    // 'middleware'=> 'auth',
     'uses'=>'App\Http\Controllers\VisitanteController@leerNovedad'
 ))->name('visitante.leerNovedad');
 
 Route::get('/leerLibro/{id}/{nombre_archivo}', array(
-    //'as'=> 'mostrarRevista',
-    // 'middleware'=> 'auth',
     'uses'=>'App\Http\Controllers\VisitanteController@leerLibro'
 ))->name('visitante.leerLibro');
 
 Route::get('/leerRevista/{id}/{nombre_archivo}', array(
-    //'as'=> 'mostrarRevista',
-    // 'middleware'=> 'auth',
     'uses'=>'App\Http\Controllers\VisitanteController@leerRevista'
 ))->name('visitante.leerRevista');
 
-Route::get('/mostrarRevista/{id}/{nombre_archivo}', array(
-    //'as'=> 'mostrarRevista',
-    // 'middleware'=> 'auth',
+Route::get('/leerNoticia/{id}/{nombre_archivo}', array(
     'uses'=>'App\Http\Controllers\VisitanteController@leerNoticia'
 ))->name('visitante.leerNoticia');
 //

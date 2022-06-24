@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Revista;
 use Dompdf\Dompdf;
 use Illuminate\Http\Request;
@@ -20,16 +19,6 @@ class RevistaController extends Controller
         $revistas = Revista::where('activo','=',1)->get();
         $trevistas = $this->cargaDT($revistas);
         return view('revistas.index')->with('revistas',$trevistas);
-    }
-
-    public function catalogo()
-    {
-        return view('revistas.catalogo');
-    }
-
-    public function visitas()
-    {
-        return view('revistas.visitas');
     }
 
     public function cargaDT($consulta)
@@ -70,6 +59,51 @@ class RevistaController extends Controller
         }
         return $revistas;
     }
+
+    public function catalogo()
+    {
+        $revistas= Revista::get();
+        return view('revistas.catalogo')->with('revistas',$revistas);
+    }
+
+    public function visitas()
+    {
+        $revistas = Revista::where('activo','=',1)->get();
+        $vrevista = $this->cargaDTvisitas($revistas);
+        return view('revistas.visitas')->with('revistas',$vrevista);
+    }
+
+
+    public function cargaDTvisitas($consulta)
+    {
+        $revista = [];
+
+        foreach ($consulta as $key => $value){
+            $eliminar = route('borrarRevista', $value['id']);
+            $edit = route('revistas.edit', $value['id']);
+            $acciones = '';
+            if (Auth::Check() && Auth::user()->role == 'admin'){
+            $acciones = '
+            <div class="btn-acciones">
+                <div class= "col-md-sm2">
+                <i class="fa-solid fa-eye"> = </i>
+                <i class="fa-solid fa-download"> = </i>
+                </div>
+            </div>
+            ';
+        }
+
+            $revista[$key] = array(
+                $value['id'],
+                $value['nombre'],
+                $value['descripcion'],
+
+                $acciones,
+            );
+        }
+        return $revista;
+    }
+
 
     public function mostrarpdf($id)
     {
