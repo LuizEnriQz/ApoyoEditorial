@@ -98,7 +98,6 @@
         <nav class="navbar navbar-expand-md navbar-light "
             style="background-color:#0A4765;">
             <div class="container-fluid">
-
                 <div class="col-sm-12 col-md-3">
                     <a class="navbar-brand mx-2" href="http:\\www.cucsh.udg.mx">
                         <img src="{{ asset('img/cucsh.svg') }}" class="d-inline-block align-text-top"
@@ -166,7 +165,7 @@
                             </li>
                             @guest
                                 @if (Route::has('login'))
-                                    <li class="nav-item">
+                                    <li class="nav-item border-start">
                                         <a class=" nav-link text-white" href="{{ route('login') }}">Inicio de
                                             Sesión</a>
                                     </li>
@@ -202,6 +201,7 @@
                 </div>
             </div>
         </nav>
+        @if (Request::route()->getName() != 'login' && Request::route()->getName() != 'register')
         <div class="container mb-2">
             <div class="row justify-content-center">
                     <img class="editorial_cucsh" src="{{asset('img/editorial_cucsh.jpg')}}" style="width:100%;" alt="editorial_cucsh">
@@ -266,6 +266,9 @@
                 </div>
             </div>
         </div>
+        @endif
+
+
         <div class="wrapper">
             @if (Auth::Check() && Auth::user()->role == 'admin')
                 @include('layouts.sidebar')

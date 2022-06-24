@@ -4,14 +4,14 @@
 
 <script defer>
 function mostrarImg(params){
-
     console.log("Prueba");
     console.log(params);
-    nuevaImagen = "/editorial/storage/app/public/noticias_img/" . (params["file"]);
+    nuevaImagen = "/editorial/storage/app/public/noticias_img/" . params["file"];
     console.log(nuevaImagen);
     $("#NoticiaImg").attr("src", nuevaImagen);
 }
 </script>
+
 {{-- <img src="/editorial/storage/app/public/noticias_img/php_3.jpeg" /> --}}
     <div class="container">
         

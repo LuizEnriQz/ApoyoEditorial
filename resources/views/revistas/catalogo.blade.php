@@ -8,7 +8,7 @@
             @foreach($revistas as $rev)
            <div class="col-md-3">
               <div class="card" style="width: 15rem;">
-                <img src="{{ "/editorial/storage/app/public/revistas_portada/" . $rev->portada }}" alt="...">
+                <img src="{{ '/editorial/storage/app/public/revistas_portada/' . $rev->portada }}" alt="...">
                     <div class="d-grid gap-2">
                    <a href="{{route('visitante.leerRevista', [$rev->id, $rev->file ] )}}" class="btn btn-primary">Leer Documento</a>
 
