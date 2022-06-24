@@ -14,11 +14,12 @@ function mostrarImg(params){
 </script>
 {{-- <img src="/editorial/storage/app/public/noticias_img/php_3.jpeg" /> --}}
     <div class="container">
+        
         <div class="row">
-            <div class="col-md-auto ml-3">
+            <div class="col-sm-12 ml-3">
                 <h2>Relación de libros</h2>
             </div>
-            <hr>
+            
         </div>
 
         <div>
@@ -38,12 +39,12 @@ function mostrarImg(params){
                 </tbody>
             </table>
         </div>
-
+        <hr>
             <div class="row">
-                <div class="col-md-auto ml-3">
+                <div class="col-sm-12 ml-3">
                     <h2>Relación de Noticia</h2>
                 </div>
-                <hr>
+                
             </div>
 
         <div>
@@ -61,12 +62,12 @@ function mostrarImg(params){
                 </tbody>
             </table>
         </div>
-
+        <hr>
             <div class="row">
-                <div class="col-md-auto ml-3">
+                <div class="col-sm-12 ml-3">
                     <h2>Relación de Revistas</h2>
                 </div>
-                <hr>
+                
             </div>
 
         <div>
@@ -88,12 +89,12 @@ function mostrarImg(params){
             </table>
 
         </div>
-
+        <hr>
         <div class="row">
-            <div class="col-md-auto ml-3">
+            <div class="col-sm-12 ml-3">
                 <h2>Relación de Novedades</h2>
             </div>
-            <hr>
+            
         </div>
 
         <div>
