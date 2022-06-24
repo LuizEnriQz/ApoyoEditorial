@@ -47,48 +47,22 @@
     </nav>
 
     <!--CONTENT-->
-    <p id="NOV">Noticias</p>
+    <p id="NOV">NOTICIAS</p>
     <div class="container flex-fluid">
         <div class="row">
 
+            @foreach($noticias as $not)
             <div class="col-md-3">
                <div class="card" style="width: 15rem;">
-                 <img src="{{asset('img/novedades/img/1.jpg')}}" alt="...">
-                    <div class="d-grid gap-2">
-                   <a href="{{route('visitante.leerNoticia', 1 )}}" class="btn btn-primary">Leer Documento</a>
-                   <a href="#" class="btn btn-info">Descargar Documento</a>
+                 <img src="{{ "/editorial/storage/app/public/noticias_img/" . $not->file }}" alt="...">
+                   <a href="{{route('visitante.leerNoticia',[$not->id, $not->file ] )}}" class="btn btn-primary">Leer Documento</a>
+
+                   <a href="#" class="btn
+                   btn-info">Descargar Documento</a>
                     </div>
                </div>
             </div>
-
-            <div class="col-md-3">
-               <div class="card" style="width: 15rem;">
-                 <img src="{{asset('img/novedades/img/1.jpg')}}" alt="...">
-                   <a href="#" class="btn btn-primary">Leer Documento</a>
-               </div>
-            </div>
-
-            <div class="col-md-3">
-               <div class="card" style="width: 15rem;">
-                 <img src="{{asset('img/novedades/img/1.jpg')}}" alt="...">
-                   <a href="#" class="btn btn-primary">Leer Documento</a>
-               </div>
-            </div>
-
-            <div class="col-md-3">
-               <div class="card" style="width: 15rem;">
-                 <img src="{{asset('img/novedades/img/1.jpg')}}" alt="...">
-                   <a href="#" class="btn btn-primary">Leer Documento</a>
-               </div>
-            </div>
-
-            <div class="col-md-3">
-               <div class="card" style="width: 15rem;">
-                 <img src="{{asset('img/novedades/img/1.jpg')}}" alt="...">
-                   <a href="#" class="btn btn-primary">Leer Documento</a>
-               </div>
-            </div>
-
+            @endforeach
         </div>
     </div>
 </body>

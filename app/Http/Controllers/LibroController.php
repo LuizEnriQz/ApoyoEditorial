@@ -70,8 +70,8 @@ class LibroController extends Controller
     public function visitas()
     {
         $libros = Libro::where('activo','=',1)->get();
-        $vlibros = $this->cargaDTvisitas($libros);
-        return view('libros.visitas')->with('libros',$vlibros);
+        $vlibro = $this->cargaDTvisitas($libros);
+        return view('libros.visitas')->with('libros',$vlibro);
     }
 
     public function cargaDTvisitas($consulta)
@@ -79,8 +79,8 @@ class LibroController extends Controller
         $libro = [];
 
         foreach ($consulta as $key => $value){
-            $eliminar = route('borrarlibro', $value['id']);
-            $edit = route('libro.edit', $value['id']);
+            $eliminar = route('borrarLibro', $value['id']);
+            $edit = route('libros.edit', $value['id']);
             $acciones = '';
             if (Auth::Check() && Auth::user()->role == 'admin'){
             $acciones = '
@@ -93,7 +93,7 @@ class LibroController extends Controller
             ';
         }
 
-            $coleccion[$key] = array(
+            $libro[$key] = array(
                 $value['id'],
                 $value['nombre'],
                 $value['descripcion'],
@@ -101,7 +101,7 @@ class LibroController extends Controller
                 $acciones,
             );
         }
-        return $coleccion;
+        return $libro;
     }
 
     public function mostrarpdf($id)
