@@ -57,7 +57,7 @@
                  <img src="{{ "/editorial/storage/app/public/noticias_img/" . $not->file }}" alt="...">
                    <a href="{{route('visitante.leerNoticia',[$not->id, $not->file ] )}}" class="btn btn-primary">Leer Documento</a>
 
-                   <a href="#" class="btn
+                   <a href="{{route('visitante.descargarNoticia',[$not->id, $not->file ] )}}" class="btn
                    btn-info">Descargar Documento</a>
                     </div>
                </div>

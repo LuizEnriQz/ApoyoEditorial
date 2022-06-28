@@ -16,14 +16,16 @@ use Illuminate\Support\Facades\Route;
 //     return view('home');
 // });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('admindash');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('admindash');
+// })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[App\Http\Controllers\adminDashController::class, 'index'])->name('admindash');
 
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/admindash', [App\Http\Controllers\adminDashController::class, 'index'])->name('admindash');
+// Route::get('/admindash', [App\Http\Controllers\adminDashController::class, 'index'])->name('admindash');
 
 
 Route::resource('libros','App\Http\Controllers\LibroController');
@@ -136,29 +138,29 @@ Route::get('/catalogoRevista', array(
 
 // Routes de conteo visitas y descargas
 
-Route::get('/visitasNovedades', array(
-    'middleware'=> 'auth',
-    'uses'=>'App\Http\Controllers\ColeccionController@visitas'
-))->name('colecciones.visitas');
+    Route::get('/visitasNovedades', array(
+        'middleware'=> 'auth',
+        'uses'=>'App\Http\Controllers\ColeccionController@visitas'
+    ))->name('colecciones.visitas');
 
-Route::get('/visitasNoticias', array(
-    'middleware'=> 'auth',
-    'uses'=>'App\Http\Controllers\NoticiaController@visitas'
-))->name('noticias.visitas');
+    Route::get('/visitasNoticias', array(
+        'middleware'=> 'auth',
+        'uses'=>'App\Http\Controllers\NoticiaController@visitas'
+    ))->name('noticias.visitas');
 
-Route::get('/visitasLibros', array(
-    'middleware'=> 'auth',
-    'uses'=>'App\Http\Controllers\LibroController@visitas'
-))->name('libros.visitas');
+    Route::get('/visitasLibros', array(
+        'middleware'=> 'auth',
+        'uses'=>'App\Http\Controllers\LibroController@visitas'
+    ))->name('libros.visitas');
 
-Route::get('/visitasRevistas', array(
-    'middleware'=> 'auth',
-    'uses'=>'App\Http\Controllers\RevistaController@visitas'
-))->name('revistas.visitas');
+    Route::get('/visitasRevistas', array(
+        'middleware'=> 'auth',
+        'uses'=>'App\Http\Controllers\RevistaController@visitas'
+    ))->name('revistas.visitas');
 
 
 
-//Rutas del usuario visitante para el conteo de de vistas y descargas
+//Rutas del usuario visitante para el conteo de de vistas
 
 Route::get('/leerNovedad/{id}/{nombre_archivo}', array(
     'uses'=>'App\Http\Controllers\VisitanteController@leerNovedad'
@@ -175,7 +177,23 @@ Route::get('/leerRevista/{id}/{nombre_archivo}', array(
 Route::get('/leerNoticia/{id}/{nombre_archivo}', array(
     'uses'=>'App\Http\Controllers\VisitanteController@leerNoticia'
 ))->name('visitante.leerNoticia');
-//
 
+//Rutas del usuario visitante para el conteo de de descargas
+
+Route::get('/descargarNovedad/{id}/{nombre_archivo}', array(
+    'uses'=>'App\Http\Controllers\VisitanteController@descargarNovedad'
+))->name('visitante.descargarNovedad');
+
+Route::get('/descargarLibro/{id}/{nombre_archivo}', array(
+    'uses'=>'App\Http\Controllers\VisitanteController@descargarLibro'
+))->name('visitante.descargarLibro');
+
+Route::get('/descargarRevista/{id}/{nombre_archivo}', array(
+    'uses'=>'App\Http\Controllers\VisitanteController@descargarRevista'
+))->name('visitante.descargarRevista');
+
+Route::get('/descargarNoticia/{id}/{nombre_archivo}', array(
+    'uses'=>'App\Http\Controllers\VisitanteController@descargarNoticia'
+))->name('visitante.descargarNoticia');
 
 

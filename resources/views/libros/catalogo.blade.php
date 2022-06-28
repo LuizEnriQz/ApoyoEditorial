@@ -64,7 +64,7 @@
                     <div class="d-grid gap-2">
                    <a href="{{route('visitante.leerLibro', [$lib->id, $lib->file ] )}}" class="btn btn-primary">Leer Documento</a>
 
-                   <a href="#" class="btn btn-info">Descargar Documento</a>
+                   <a href="{{route('visitante.descargarLibro', [$lib->id, $lib->file ] )}}"  class="btn btn-info">Descargar Documento</a>
                     </div>
                </div>
             </div>

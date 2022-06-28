@@ -58,7 +58,7 @@
                     <div class="d-grid gap-2">
                    <a href="{{route('visitante.leerRevista', [$rev->id, $rev->file ] )}}" class="btn btn-primary">Leer Documento</a>
 
-                  <a href="#" class="btn btn-info">Descargar Documento</a>
+                  <a href="{{route('visitante.descargarRevista', [$rev->id, $rev->file ] )}}" class="btn btn-info">Descargar Documento</a>
                    </div>
               </div>
            </div>
