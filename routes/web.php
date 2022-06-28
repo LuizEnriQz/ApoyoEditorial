@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,13 @@ use Illuminate\Support\Facades\Route;
 //     return view('home');
 // });
 
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('admindash');
 // })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[App\Http\Controllers\adminDashController::class, 'index'])->name('admindash');
+
 
 Auth::routes();
 
@@ -28,12 +31,12 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 // Route::get('/admindash', [App\Http\Controllers\adminDashController::class, 'index'])->name('admindash');
 
 
-Route::resource('libros','App\Http\Controllers\LibroController');
-Route::resource('revistas','App\Http\Controllers\RevistaController');
-Route::resource('noticias','App\Http\Controllers\NoticiaController');
-Route::resource('administrativos','App\Http\Controllers\AdministrativoController');
-Route::resource('colecciones','App\Http\Controllers\ColeccionController');
-Route::resource('articulos','App\Http\Controllers\ArticuloController');
+Route::resource('libros','App\Http\Controllers\LibroController')->middleware('auth');
+Route::resource('revistas','App\Http\Controllers\RevistaController')->middleware('auth');
+Route::resource('noticias','App\Http\Controllers\NoticiaController')->middleware('auth');
+Route::resource('administrativos','App\Http\Controllers\AdministrativoController')->middleware('auth');
+Route::resource('colecciones','App\Http\Controllers\ColeccionController')->middleware('auth');
+Route::resource('articulos','App\Http\Controllers\ArticuloController')->middleware('auth');
 
 
 

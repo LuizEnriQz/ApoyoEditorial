@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Revista;
 
-class HomeController extends Controller
+class 
+HomeController extends Controller
 {
     /**
      * Create a new controller instance.

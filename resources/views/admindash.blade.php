@@ -9,7 +9,7 @@ rel="stylesheet"
 
  <!-- PAGE CONTENT-->
     <div class="inicio">
-        <h3>PAGINA DE ADMINISTRADOR</h3>
+        <h3>PÁGINA DE ADMINISTRADOR</h3>
     </div>
 
 <!-- SEARCH BAR -->
