@@ -18,7 +18,8 @@
             <th>Año</th>
             <th>ISBN</th>
             <th>Categoría</th>
-            <th>Relación de Visitas y descargas</th>
+            <th>Relación de Visitas</th>
+            <th>Relación de Descargas</th>
             </thead>
 
             <tbody>

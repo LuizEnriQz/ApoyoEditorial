@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Libro;
+use App\Models\Vista_vs_Descarga;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -79,26 +80,21 @@ class LibroController extends Controller
         $libro = [];
 
         foreach ($consulta as $key => $value){
-            $eliminar = route('borrarLibro', $value['id']);
-            $edit = route('libros.edit', $value['id']);
-            $acciones = '';
+
+            $totalVisitas =  Vista_vs_Descarga::where("id_registro", $value['id'])->where('id_seccion',2)->where('visitas',1)->count();
+
+            $totalDescargas =  Vista_vs_Descarga::where("id_registro", $value['id'])->where('id_seccion',2)->where('descargas','!=',0)->count();
+
             if (Auth::Check() && Auth::user()->role == 'admin'){
-            $acciones = '
-            <div class="btn-acciones">
-                <div class= "col-md-sm2">
-                <i class="fa-solid fa-eye"> = </i>
-                <i class="fa-solid fa-download"> = </i>
-                </div>
-            </div>
-            ';
+
         }
 
             $libro[$key] = array(
                 $value['id'],
                 $value['nombre'],
                 $value['descripcion'],
-
-                $acciones,
+                $totalVisitas,
+                $totalDescargas,
             );
         }
         return $libro;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Revista;
+use App\Models\Vista_vs_Descarga;
 use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -79,26 +80,22 @@ class RevistaController extends Controller
         $revista = [];
 
         foreach ($consulta as $key => $value){
-            $eliminar = route('borrarRevista', $value['id']);
-            $edit = route('revistas.edit', $value['id']);
+
+            $totalVisitas =  Vista_vs_Descarga::where("id_registro", $value['id'])->where('id_seccion',3)->where('visitas',1)->count();
+
+            $totalDescargas =  Vista_vs_Descarga::where("id_registro", $value['id'])->where('id_seccion',3)->where('descargas','!=',0)->count();
+
             $acciones = '';
             if (Auth::Check() && Auth::user()->role == 'admin'){
-            $acciones = '
-            <div class="btn-acciones">
-                <div class= "col-md-sm2">
-                <i class="fa-solid fa-eye"> = </i>
-                <i class="fa-solid fa-download"> = </i>
-                </div>
-            </div>
-            ';
+
         }
 
             $revista[$key] = array(
                 $value['id'],
                 $value['nombre'],
                 $value['descripcion'],
-
-                $acciones,
+                $totalVisitas,
+                $totalDescargas,
             );
         }
         return $revista;

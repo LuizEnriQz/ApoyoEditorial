@@ -15,7 +15,8 @@
              <th>ID</th>
              <th>Titulo</th>
              <th>Descripción</th>
-             <th>Relación de Visitas y descargas</th>
+             <th>Relación de Visitas</th>
+             <th>Relación de Descargas</th>
              </thead>
 
              <tbody>

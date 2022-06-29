@@ -32,7 +32,7 @@ rel="stylesheet"
 
     <div class="col-md-12">
         <div class="card card-chart">
-            <div class="card-header card-header-success">Sistema Integral de Gestión de Apoyo Editorial</div>
+            <div class="card-header card-header-success">Sistema de Seguimiento de Vistas y Descargas</div>
 
             <div class="row m-2">
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Coleccion;
+use App\Models\Vista_vs_Descarga;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -82,20 +83,16 @@ class ColeccionController extends Controller
     public function cargaDTvisitas($consulta)
     {
         $coleccion = [];
+        // dd($consulta);
 
         foreach ($consulta as $key => $value){
-            $eliminar = route('borrarColeccion', $value['id']);
-            $edit = route('colecciones.edit', $value['id']);
+
+            $totalVisitas =  Vista_vs_Descarga::where("id_registro", $value['id'])->where('id_seccion',1)->where('visitas',1)->count();
+
+            $totalDescargas =  Vista_vs_Descarga::where("id_registro", $value['id'])->where('id_seccion',1)->where('descargas','!=',0)->count();
+
             $acciones = '';
             if (Auth::Check() && Auth::user()->role == 'admin'){
-            $acciones = '
-            <div class="btn-acciones">
-                <div class= "col-md-sm2">
-                <i class="fa-solid fa-eye"> = </i>
-                <i class="fa-solid fa-download"> = </i>
-                </div>
-            </div>
-            ';
         }
 
             $coleccion[$key] = array(
@@ -105,8 +102,8 @@ class ColeccionController extends Controller
                 $value['anio'],
                 $value['isbn'],
                 $value['categoria'],
-
-                $acciones,
+                $totalVisitas,
+                $totalDescargas,
             );
         }
         return $coleccion;

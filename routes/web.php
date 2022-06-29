@@ -200,3 +200,5 @@ Route::get('/descargarNoticia/{id}/{nombre_archivo}', array(
 ))->name('visitante.descargarNoticia');
 
 
+
+

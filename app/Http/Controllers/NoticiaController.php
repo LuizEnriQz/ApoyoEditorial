@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Noticia;
+use App\Models\Vista_vs_Descarga;
 use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -76,27 +77,22 @@ class NoticiaController extends Controller
         $noticia = [];
 
         foreach ($consulta as $key => $value){
-            $eliminar = route('borrarNoticia', $value['id']);
-            $edit = route('noticias.edit', $value['id']);
+
+            $totalVisitas =  Vista_vs_Descarga::where("id_registro", $value['id'])->where('id_seccion',4)->where('visitas',1)->count();
+
+            $totalDescargas =  Vista_vs_Descarga::where("id_registro", $value['id'])->where('id_seccion',4)->where('descargas','!=',0)->count();
+
             $acciones = '';
             if (Auth::Check() && Auth::user()->role == 'admin'){
-            $acciones = '
-            <div class="btn-acciones">
-                <div class= "col-md-sm2">
-                <i class="fa-solid fa-eye"> = </i>
-                <i class="fa-solid fa-download"> = </i>
-                </div>
-            </div>
-            ';
+
         }
 
             $noticia[$key] = array(
                 $value['id'],
                 $value['titulo'],
                 $value['descripcion'],
-                $value['file'],
-
-                $acciones,
+                $totalVisitas,
+                $totalDescargas,
             );
         }
         return $noticia;
