@@ -22,13 +22,18 @@
                             <label class="font-weight-bold" for="nombre">Nombre </label>
                             <input type="text" class="box form-control" id="nombre" name="nombre" value="{{ old('nombre') }}">
                         </div>
-                        <div class="col-md-1">
-                            <label class="font-weight-bold" for="anio">Año </label>
-                            <input type="int" class="box form-control" id="anio" name="anio" value="{{ old('anio') }}">
+                        <div class="col-md-3">
+                            <label class="font-weight-bold" for="isbn">ISBN </label>
+                            <input type="text" class="box form-control" id="isbn" name="isbn"
+                                   value="{{ old('isbn') }}">
                         </div>
                         <div class="col-md-7">
                             <label class="font-weight-bold" for="autores">Autores </label>
                             <input type="text" class=" box form-control" id="autores" name="autores" value="{{ old('autores') }}">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="font-weight-bold" for="anio">Año </label>
+                            <input type="int" class="box form-control" id="anio" name="anio" value="{{ old('anio') }}">
                         </div>
                         <div class="col-md-7">
                             <label class="font-weight-bold" for="descripcion">Descripción </label>

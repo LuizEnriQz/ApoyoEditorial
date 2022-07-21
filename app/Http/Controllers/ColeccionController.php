@@ -51,10 +51,10 @@ class ColeccionController extends Controller
                 $value['descripcion'],
                 $value['anio'],
                 $value['paginas'],
-                $value['tema'],
-                $value['coleccion'],
+                // $value['tema'],
+                // $value['coleccion'],
                 $value['isbn'],
-                $value['novedad'],
+                // $value['novedad'],
                 $value['file'],
                 $value['portada'],
                 $value['categoria'],
@@ -120,6 +120,9 @@ class ColeccionController extends Controller
         ];
         return response()->file($path, $header);
 
+        // return `<iframe src="{{ '/editorial/storage/app/public/colecciones_pdfs/'` . $coleccionEncontrado->file . `}} #toolbar=0` . `" allowfullscree alt="..." width="100%" height="500px">
+        // </iframe>`;
+
     }
 
 //     public function mostrarimg($id)
@@ -158,10 +161,10 @@ class ColeccionController extends Controller
         'descripcion'=>'required',
         'anio'=>'required',
         'paginas'=>'required',
-        'tema'=>'required',
-        'coleccion'=>'required',
+        // 'tema'=>'required',
+        // 'coleccion'=>'required',
         'isbn'=>'required',
-        'novedad'=>'required',
+        // 'novedad'=>'required',
         'categoria'=>'required',
         'file'=>'required|mimes:pdf',
         'portada'=>'required|image|mimes:jpg,jpeg,gif,png,svg',
@@ -173,10 +176,10 @@ class ColeccionController extends Controller
         $coleccion->descripcion = $request->input('descripcion');
         $coleccion->anio = $request->input('anio');
         $coleccion->paginas = $request->input('paginas');
-        $coleccion->tema = $request->input('tema');
-        $coleccion->coleccion = $request->input('coleccion');
+        // $coleccion->tema = $request->input('tema');
+        // $coleccion->coleccion = $request->input('coleccion');
         $coleccion->isbn = $request->input('isbn');
-        $coleccion->novedad = $request->input('novedad');
+        // $coleccion->novedad = $request->input('novedad');
         $coleccion->categoria = $request->input('categoria');
         $coleccion->file = $request->file->getClientOriginalName();
         $coleccion->portada = $request->portada->getClientOriginalName();
@@ -241,11 +244,13 @@ class ColeccionController extends Controller
        $coleccion->descripcion = $request->input('descripcion');
        $coleccion->anio = $request->input('anio');
        $coleccion->paginas = $request->input('paginas');
-       $coleccion->tema = $request->input('tema');
-       $coleccion->coleccion = $request->input('coleccion');
+       // $coleccion->tema = $request->input('tema');
+       // $coleccion->coleccion = $request->input('coleccion');
        $coleccion->isbn = $request->input('isbn');
-       $coleccion->novedad = $request->input('novedad');
+       // $coleccion->novedad = $request->input('novedad');
        $coleccion->categoria = $request->input('categoria');
+       $coleccion->file = $request->file->getClientOriginalName();
+       $coleccion->portada = $request->portada->getClientOriginalName();
        $coleccion->update();
 
        return redirect('colecciones');

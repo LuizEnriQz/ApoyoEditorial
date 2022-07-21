@@ -33,6 +33,11 @@
                         <input type="text" class="form-control" id="descripcion" name="cuerpo"
                                value="{{ $noticia->cuerpo }}">
                     </div>
+                    <div class="col-md-4">
+                        <br>
+                        <label class="font-weight-bold" for="portada">Seleccione la IMAGEN de la noticia que desea subir </label>
+                        <input type="file" name="file"  id="chooseFile" accept="image/*">
+                    </div>
                     <br>
                 </div>
                 <br>

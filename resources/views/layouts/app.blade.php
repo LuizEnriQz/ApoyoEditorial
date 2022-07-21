@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Apoyo Editorial</title>
     <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
     <script src=http://code.jquery.com/jquery-1.11.3.min.js></script>
     <script src=https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js defer></script>
@@ -98,29 +98,32 @@
         <nav class="navbar navbar-expand-md navbar-light " style="background-color:#0A4765;">
             <div class="container-fluid">
                 <a class="navbar-brand mx-2" href="http:\\www.cucsh.udg.mx">
-                    <img src="{{ asset('img/cucsh.svg') }}" class="d-inline-block align-text-top" alt="cucsh-logo"
-                        width="120px"></a>
+                    <img src="{{ asset('img/cucshBlanco.png') }}" class="d-inline-block align-text-top" alt="cucsh-logo"
+                        width="130px"></a>
                 <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#a"
                     aria-controls="a" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="col-sm-12 col-md-8">
+            </div>
+
+            <div <class="container-fluid">
+                <div class="col-sm-12 col-md-12">
                     <div class="collapse navbar-collapse" id="a">
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{{ route('home') }}">Inicio</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            {{-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" id="red_universitaria" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false" href="#">Red universitaria</a>
                                 <ul class="dropdown-menu" aria-labelledby="red_universitaria">
-                                    <li><a class="dropdown-item" href="#">Universidad de Guadalajara</a></li>
-                                    <li><a class="dropdown-item" href="#">Directorio Oficial</a></li>
-                                    <li><a class="dropdown-item" href="#">CUAAD</a></li>
-                                    <li><a class="dropdown-item" href="#">CUCBA</a></li>
-                                    <li><a class="dropdown-item" href="#">CUCEA</a></li>
-                                    <li><a class="dropdown-item" href="#">CUCEI</a></li>
-                                    <li><a class="dropdown-item" href="#">CUCS</a></li>
+                                    <li><a class="dropdown-item" href="http:\\www.udg.mx">Universidad de Guadalajara</a></li>
+                                    <li><a class="dropdown-item" href="http:\\www.udg.mx/directorio">Directorio Oficial</a></li>
+                                    <li><a class="dropdown-item" href="http:\\www.cuaad.udg.mx/">CUAAD</a></li>
+                                    <li><a class="dropdown-item" href="http:\\www.cucba.udg.mx/">CUCBA</a></li>
+                                    <li><a class="dropdown-item" href="https:\\www.cucea.udg.mx/">CUCEA</a></li>
+                                    <li><a class="dropdown-item" href="http:\\www.cucei.udg.mx/">CUCEI</a></li>
+                                    <li><a class="dropdown-item" href="https:\\www.cucs.udg.mx/">CUCS</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -128,14 +131,14 @@
                                     data-bs-toggle="dropdown" aria-expanded="false" href="#">Adminsitración y
                                     gobierno</a>
                                 <ul class="dropdown-menu" aria-labelledby="admin">
-                                    <li><a class="dropdown-item" href="#">Consejo General</a></li>
-                                    <li><a class="dropdown-item" href="#">Rectoría General</a></li>
-                                    <li><a class="dropdown-item" href="#">Vicerrectoria Ejecutiva</a></li>
-                                    <li><a class="dropdown-item" href="#">Secretaria General</a></li>
-                                    <li><a class="dropdown-item" href="#">Contralora General</a></li>
-                                    <li><a class="dropdown-item" href="#">Oficina de la Abogacía General</a>
+                                    <li><a class="dropdown-item" href="http:\\www.hcgu.udg.mx/">Consejo General</a></li>
+                                    <li><a class="dropdown-item" href="https:\\rectoria.udg.mx/">Rectoría General</a></li>
+                                    <li><a class="dropdown-item" href="http:\\www.vicerrectoria.udg.mx/">Vicerrectoria Ejecutiva</a></li>
+                                    <li><a class="dropdown-item" href="https:\\secgral.udg.mx/">Secretaria General</a></li>
+                                    <li><a class="dropdown-item" href="https:\\secgral.udg.mx/">Contralora General</a></li>
+                                    <li><a class="dropdown-item" href="https:\\abogaciageneral.udg.mx/">Oficina de la Abogacía General</a>
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Finanzas</a></li>
+                                    <li><a class="dropdown-item" href="https:\\finanzas.udg.mx/">Finanzas</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -143,22 +146,22 @@
                                     data-bs-toggle="dropdown" aria-expanded="false" href="#">Otros sitios
                                     UdeG</a>
                                 <ul class="dropdown-menu" aria-labelledby="otros">
-                                    <li><a class="dropdown-item" href="#">Biblioteca</a></li>
-                                    <li><a class="dropdown-item" href="#">Cartelera UDG</a></li>
-                                    <li><a class="dropdown-item" href="#">Cultura UDG</a></li>
-                                    <li><a class="dropdown-item" href="#">FIL - Feria Internacional del Libro de
+                                    <li><a class="dropdown-item" href="http:\\www.bibliotecas.udg.mx/">Biblioteca</a></li>
+                                    <li><a class="dropdown-item" href="http:\\www.carteleraudg.medios.udg.mx/">Cartelera UDG</a></li>
+                                    <li><a class="dropdown-item" href="https:\\cultura.udg.mx/">Cultura UDG</a></li>
+                                    <li><a class="dropdown-item" href="https:\\www.fil.com.mx/">FIL - Feria Internacional del Libro de
                                             Guadalajara</a></li>
-                                    <li><a class="dropdown-item" href="#">FILP</a></li>
-                                    <li><a class="dropdown-item" href="#">Fundación UDG</a></li>
-                                    <li><a class="dropdown-item" href="#">Gaceta Universitaria</a></li>
-                                    <li><a class="dropdown-item" href="#">Leones Negros</a></li>
-                                    <li><a class="dropdown-item" href="#">Normatividad</a></li>
-                                    <li><a class="dropdown-item" href="#">Programas Educativos de Posgrado</a>
+                                    <li><a class="dropdown-item" href="http:\\flip.cga.udg.mx/">FILP</a></li>
+                                    <li><a class="dropdown-item" href="https:\\fundacion.udg.mx/">Fundación UDG</a></li>
+                                    <li><a class="dropdown-item" href="http:\\www.gaceta.udg.mx/">Gaceta Universitaria</a></li>
+                                    <li><a class="dropdown-item" href="https:\\leonesnegrosudg.mx/">Leones Negros</a></li>
+                                    <li><a class="dropdown-item" href="https:\\www.udg.mx/normatividad">Normatividad</a></li>
+                                    <li><a class="dropdown-item" href="http:\\www.pregrado.udg.mx/">Programas Educativos de Posgrado</a>
                                     </li>
                                 </ul>
-                            </li>
-                            <li class="nav-item"><a class="nav-link text-white" href="#">UDG</a>
-                            </li>
+                            </li> --}}
+                            {{-- <li class="nav-item"><a class="nav-link text-white" href="https:\\www.udg.mx/">UDG</a>
+                            </li> --}}
                             @guest
                                 @if (Route::has('login'))
                                     <li class="nav-item border-start">
@@ -207,6 +210,7 @@
 
             <div id="content">
                 @yield('content')
+                @yield('modal')
             </div>
 
         </div>
@@ -255,6 +259,7 @@
             });
         });
     </script>
+
 
 </body>
 

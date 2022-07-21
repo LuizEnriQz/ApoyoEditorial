@@ -21,7 +21,7 @@
                    <div class="col-md-7">
                        <label class="font-weight-bold" for="titulo">Titulo </label>
                        <input  type="text" class="box form-control" id="titulo" name="titulo"
-                               value="{{ old('titulo') }}">
+                               value="{{ $articulo->titulo }}">
                    </div>
                    <div class="col-md-3">
                        <label class="font-weight-bold" for="categoria">Categoria </label>
@@ -33,12 +33,12 @@
                    <div class="col-md-10">
                        <label class="font-weight-bold" for="descripcion">Descripción </label>
                        <input type="text" class="box form-control" id="descripcion" name="descripcion"
-                              value="{{ old('descripcion') }}">
+                              value="{{ $articulo->descripcion }}">
                    </div>
                    <div class="col-md-10">
                        <label class="font-weight-bold" for="etiquetas">Etiquetas </label>
                        <input type="text" class=" box form-control" id="etiquetas" name="etiquetas"
-                              value="{{ old('etiquetas') }}">
+                              value="{{ $articulo->etiquetas }}">
                    </div>
                     <br>
                 </div>

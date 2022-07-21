@@ -91,7 +91,7 @@ a:focus {
 
 #sidebar ul li a:hover {
     color: black;
-    background: #fff;
+    background: #b55;
 }
 
 #sidebar ul li.active>a,

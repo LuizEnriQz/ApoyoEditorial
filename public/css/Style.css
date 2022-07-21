@@ -218,7 +218,7 @@ body {
 
 .search-space .search-box {
     position: relative;
-    
+
 }
 
 .search-space .search-box .input {
@@ -307,8 +307,8 @@ h2 {
 
 .slider li img {
     height: 250px;
-    width: 350px;
-    padding: 3px;
+    width: 212px;
+    padding: 2px;
 }
 
 @keyframes slider {

@@ -24,12 +24,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[App\Http\Controllers\adminDashController::class, 'index'])->name('admindash');
 
+Route::get('administrativos/directorio', [App\Http\Controllers\AdministrativoController::class, 'directorio'])->name('administrativos.directorio');
+
+Route::get('administrativos/consejoEditorial', [App\Http\Controllers\AdministrativoController::class, 'consejoEditorial'])->name('administrativos.consejoEditorial');
 
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/admindash', [App\Http\Controllers\adminDashController::class, 'index'])->name('admindash');
-
 
 Route::resource('libros','App\Http\Controllers\LibroController')->middleware('auth');
 Route::resource('revistas','App\Http\Controllers\RevistaController')->middleware('auth');
@@ -91,7 +93,7 @@ Route::get('/mostrarLibro/{id}', array(
 Route::get('/mostrarNoticia/{id}', array(
     'as'=> 'mostrarNoticia',
     // 'middleware'=> 'auth',
-    'uses'=>'App\Http\Controllers\NoticiaController@mostrarpdf'
+    'uses'=>'App\Http\Controllers\NoticiaController@mostrarimg'
 ));
 
 Route::get('/mostrarRevista/{id}', array(
@@ -199,6 +201,11 @@ Route::get('/descargarNoticia/{id}/{nombre_archivo}', array(
     'uses'=>'App\Http\Controllers\VisitanteController@descargarNoticia'
 ))->name('visitante.descargarNoticia');
 
+//Rutas de Directorio y Consejo Editorial
 
+// Route::get('/directorio', array(
+//     // 'middleware'=> 'auth',
+//     'uses'=>'App\Http\Controllers\AdministrativoController@directorio'
+// ))->name('administrativos.directorio');
 
 

@@ -47,6 +47,15 @@
                         <input type="text" class="form-control" id="descripcion" name="descripcion"
                                value="{{ $revista->descripcion }}">
                     </div>
+                    <div class="col-md-6">
+                        <label class="font-weight-bold" for="file">Seleccione el PDF de la revista que desea subir </label>
+                        <input type="file" name="file" id="chooseFile" accept="application/pdf">
+                    </div>
+                    <br>
+                    <div class="col-md-6">
+                        <label class="font-weight-bold" for="portada">Seleccione la IMAGEN de la portada que desea subir </label>
+                        <input type="file" name="portada" id="chooseFile" accept="image/*">
+                    </div>
                     <br>
                 </div>
                 <br>

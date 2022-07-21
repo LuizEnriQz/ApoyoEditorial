@@ -22,7 +22,7 @@ class CreateAdministrativosTable extends Migration
             $table->string('file',250);
             $table->integer('activo');
             $table->string('email', 100);
-            $table->string('resenia', 500);
+            $table->string('resenia', 2500);
             $table->string('categoria', 11);
             $table->timestamps();
         });

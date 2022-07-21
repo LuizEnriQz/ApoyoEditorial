@@ -19,10 +19,10 @@
                 <th>Descripción</th>
                 <th>Año</th>
                 <th>Páginas</th>
-                <th>Tema</th>
-                <th>Colección</th>
+                {{-- <th>Tema</th> --}}
+                {{-- <th>Colección</th> --}}
                 <th>ISBN</th>
-                <th>Novedad</th>
+                {{-- <th>Novedad</th> --}}
                 <th>Nombre archivo PDF</th>
                 <th>Portada</th>
                 <th>Categoría</th>

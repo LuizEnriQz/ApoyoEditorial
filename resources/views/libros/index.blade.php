@@ -16,7 +16,8 @@
         <th>ID</th>
         <th>Nombre</th>
         <th>Autores</th>
-        <th>año</th>
+        <th>ISBN</th>
+        <th>Año</th>
         <th>Descripción</th>
         <th>Nombre archivo PDF</th>
         <th>Archivo de Portada</th>

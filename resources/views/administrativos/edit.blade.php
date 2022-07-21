@@ -20,39 +20,44 @@
                     <div class="col-md-7">
                         <label class="font-weight-bold" for="nombre">Nombre </label>
                         <input  type="text" class="box form-control" id="nombre" name="nombre"
-                               value="{{ old('nombre') }}">
+                               value="{{ $administrativo->nombre }}">
                     </div>
                     <div class="col-md-3">
                         <label class="font-weight-bold" for="puesto">Puesto </label>
                         <input type="text" class="box form-control" id="puesto" name="puesto"
-                               value="{{ old('puesto') }}">
+                               value="{{ $administrativo->puesto }}">
                     </div>
                     <div class="col-md-7">
                         <label class="font-weight-bold" for="direccion">Dirección </label>
                         <input type="text" class=" box form-control" id="direccion" name="direccion"
-                               value="{{ old('direccion') }}">
+                               value="{{ $administrativo->direccion }}">
                     </div>
                     <div class="col-md-3">
                         <label class="font-weight-bold" for="telefono">Telefono </label>
                         <input type="tel" class="box form-control" id="telefono" name="telefono"
-                               value="{{ old('telefono') }}">
+                               value="{{ $administrativo->telefono }}">
                     </div>
                     <div class="col-md-7">
                         <label class="font-weight-bold" for="email">Email </label>
                         <input type="email" class="box form-control" id="email" name="email"
-                               value="{{ old('email') }}">
+                               value="{{ $administrativo->email }}">
                     </div>
                     <div class="col-md-3">
                         <label class="font-weight-bold" for="categoria">Categoria </label>
                         <select class="form-select" type="text" class="select" id="categoria" name="categoria">
                                <option value="miemComite">Miembros de Comité</option>
-                               <option value="funcionarios">funcionarios</option>
+                               <option value="directivos">Directivos</option>
                         </select>
                     </div>
                     <div class="col-md-7">
                         <label class="font-weight-bold" for="resenia">Reseña </label>
                         <input type="text" class="box form-control" id="resenia" name="resenia"
-                               value="{{ old('resenia') }}">
+                               value="{{ $administrativo->resenia }}">
+                    </div>
+                    <div class="col-md-7">
+                        <label class="font-weight-bold" for="file">Seleccione la IMAGEN o FOTOGRAFÍA que desea subir </label>
+                        <input type="file" name="file" id="chooseFile" accept="image/*"
+                                value="{{ $administrativo->file }}">
                     </div>
                     <br>
                 </div>

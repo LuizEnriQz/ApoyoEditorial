@@ -9,11 +9,11 @@
                 <ul class="mid_menu">
                     <li><a href="#">Editorial CUCSH</a>
                         <ul class="middle_submenu ">
-                            <li class="w-100"><a href="#">Directorio</a></li>
+                            <li class="w-100"><a href="{{ route('administrativos.directorio') }}">Directorio</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Lineamientos y normas editoriales</a></li>
-                    <li><a href="#">Consejo Editorial</a></li>
+                    <li><a href="{{ route('administrativos.consejoEditorial')}}">Consejo Editorial</a></li>
                     <li><a href="#">Publiaciones</a>
                         <ul class="middle_submenu">
                             <li><a href="#">Novedades 2020</a></li>

@@ -24,10 +24,10 @@ class CreateColeccionesTable extends Migration
             $table->integer('seccion_id')->default(1);
             $table->integer('anio');
             $table->integer('paginas');
-            $table->string('tema',150);
-            $table->string('coleccion',150);
+            // $table->string('tema',150);
+            // $table->string('coleccion',150);
             $table->string('isbn',20);
-            $table->string('novedad',150);
+            // $table->string('novedad',150);
             $table->string('categoria',20);
             $table->timestamps();
         });

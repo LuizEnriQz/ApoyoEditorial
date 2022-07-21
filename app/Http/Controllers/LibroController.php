@@ -52,6 +52,7 @@ class LibroController extends Controller
                 $value['id'],
                 $value['nombre'],
                 $value['autores'],
+                $value['isbn'],
                 $value['anio'],
                 $value['descripcion'],
                 $value['file'],
@@ -154,15 +155,17 @@ class LibroController extends Controller
         $validateData = $this->validate($request,[
             'nombre'=>'required',
             'anio'=>'required',
+            'isbn'=>'required',
             'autores'=>'required',
             'descripcion'=>'required',
             'file'=>'required|mimes:pdf',
-            'portada'=>'required|image|mimes:jpg,jpeg,gif,svg',
+            'portada'=>'required|image|mimes:jpg,png,jpeg,gif,svg',
 
         ]);
         $libro = new Libro();
         $libro->nombre = $request->input('nombre');
         $libro->anio = $request->input('anio');
+        $libro->isbn = $request->input('isbn');
         $libro->autores = $request->input('autores');
         $libro->descripcion = $request->input('descripcion');
         $libro->file = $request->file->getClientOriginalName();
@@ -228,8 +231,11 @@ class LibroController extends Controller
         $libro = Libro::find($id);
         $libro->nombre = $request->input('nombre');
         $libro->anio = $request->input('anio');
+        $libro->isbn = $request->input('isbn');
         $libro->autores = $request->input('autores');
         $libro->descripcion = $request->input('descripcion');
+        $libro->file = $request->file->getClientOriginalName();
+        $libro->portada = $request->portada->getClientOriginalName();
         $libro->update();
         return redirect('libros');
     }

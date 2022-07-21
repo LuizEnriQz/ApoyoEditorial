@@ -2,24 +2,15 @@
 
 @section('content')
 
-<script defer>
-function mostrarImg(params){
-    console.log("Prueba");
-    console.log(params);
-    nuevaImagen = "/editorial/storage/app/public/noticias_img/" . params["file"];
-    console.log(nuevaImagen);
-    $("#NoticiaImg").attr("src", nuevaImagen);
-}
-</script>
 
 {{-- <img src="/editorial/storage/app/public/noticias_img/php_3.jpeg" /> --}}
     <div class="container">
-        
+
         <div class="row">
             <div class="col-sm-12 ml-3">
                 <h2>Relación de libros</h2>
             </div>
-            
+
         </div>
 
         <div>
@@ -44,8 +35,9 @@ function mostrarImg(params){
                 <div class="col-sm-12 ml-3">
                     <h2>Relación de Noticia</h2>
                 </div>
-                
+
             </div>
+
 
         <div>
             <table id="noticias" class="table table-striped table-bordered" style="width:100%">
@@ -67,7 +59,7 @@ function mostrarImg(params){
                 <div class="col-sm-12 ml-3">
                     <h2>Relación de Revistas</h2>
                 </div>
-                
+
             </div>
 
         <div>
@@ -94,7 +86,7 @@ function mostrarImg(params){
             <div class="col-sm-12 ml-3">
                 <h2>Relación de Novedades</h2>
             </div>
-            
+
         </div>
 
         <div>
@@ -116,8 +108,9 @@ function mostrarImg(params){
             </table>
         </div>
 
+
         {{-- Modal de Noticias --}}
-        <div class="modal fade" id="NoticiaModal" tabindex="-1" aria-labelledby=NoticiaModalLabel" aria-hidden="true">
+        {{-- <div class="modal fade" id="NoticiaModal" tabindex="-1" aria-labelledby=NoticiaModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -128,22 +121,45 @@ function mostrarImg(params){
                             </div>
                         </div>
                     </a>
-                    {{-- <div class="modal-header"
+                    <div class="modal-header"
                         <h3 class="modal-title text-center" id="NoticiaModalLabel">
                         </h3>
                         <button type="button" class="btn-close" data-bs-dismiss="close" aria-label="close"></button>
                     </div>
 
-                    <div class="modal-body">
+                    <div class="modal-body" id="NoticiaModalLabel2">
                         <img id="NoticiaImg" src="#">
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cerrar</button>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
+
+
+
+
+        <!-- Modal -->
+        {{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="#"  id="NoticiaImg" alt="#">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div> --}}
+
     </div>
 
     {{-- DATA TABLE DE LIBRO --}}
@@ -293,6 +309,21 @@ function mostrarImg(params){
             } );
         } );
     </script>
+
+
+    {{-- <script >
+
+        function mostrarImg(){
+
+
+            // console.log("Prueba");
+            // console.log(params);
+            // nuevaImagen = "/editorial/storage/app/public/noticias_img/" . params["file"];
+            // console.log(nuevaImagen);
+            // $("#NoticiaImg").attr("src", nuevaImagen);
+        }
+    </script> --}}
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>

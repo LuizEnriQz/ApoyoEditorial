@@ -17,6 +17,7 @@ class CreateLibrosTable extends Migration
             $table->id();
             $table->string('nombre', 250);
             $table->integer('anio');
+            $table->string('isbn',20);
             $table->string('portada',50);
             $table->string('file',250);
             $table->integer('activo');

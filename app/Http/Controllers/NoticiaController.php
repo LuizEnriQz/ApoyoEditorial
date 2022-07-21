@@ -209,6 +209,7 @@ class NoticiaController extends Controller
         $noticia->titulo = $request->input('titulo');
         $noticia->fecha = $request->input('fecha');
         $noticia->descripcion = $request->input('descripcion');
+        $noticias->file = $request->file->getClientOriginalName();
         $noticia->update();
         return redirect('noticias');
     }

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-    
+
 @section('content')
 @include('layouts.sub-menu')
 <div class="container-fluid">
@@ -37,6 +37,8 @@
             </div>
 
         </div>
+
+
         <div class="row justify-content-center">
             <div class="col-sm-8">
                 <hr>

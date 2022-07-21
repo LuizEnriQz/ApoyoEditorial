@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4 ml-3">
+        <div class="col-md-5 ml-3">
             <h2>Captura una Revista</h2>
         </div>
         <hr>
@@ -21,7 +21,7 @@
                             <label class="font-weight-bold" for="nombre">Nombre </label>
                             <input type="text" class="form-control" id="nombre" name="nombre" value="{{ old('nombre') }}">
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-2">
                             <label class="font-weight-bold" for="anio">Año </label>
                             <input type="int" class="form-control" id="anio" name="anio" value="{{ old('anio') }}">
                         </div>

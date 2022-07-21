@@ -22,10 +22,10 @@
                         <input type="text" class="form-control" id="nombre" name="nombre"
                                value="{{ $libro->nombre }}">
                     </div>
-                    <div class="col-md-4">
-                        <label class="font-weight-bold" for="anio">Año </label>
-                        <input type="int" class="form-control" id="anio" name="anio"
-                               value="{{ $libro->anio }}">
+                    <div class="col-md-3">
+                        <label class="font-weight-bold" for="isbn">ISBN </label>
+                        <input type="text" class="box form-control" id="isbn" name="isbn"
+                               value="{{ $libro->isbn}}">
                     </div>
                     <div class="col-md-4">
                         <label class="font-weight-bold" for="autores">Autores </label>
@@ -33,9 +33,23 @@
                                value="{{ $libro->autores }}">
                     </div>
                     <div class="col-md-4">
+                        <label class="font-weight-bold" for="anio">Año </label>
+                        <input type="int" class="form-control" id="anio" name="anio"
+                               value="{{ $libro->anio }}">
+                    </div>
+                    <div class="col-md-4">
                         <label class="font-weight-bold" for="descripcion">Descripción </label>
                         <input type="text" class="form-control" id="descripcion" name="descripcion"
                                value="{{ $libro->descripcion }}">
+                    </div>
+                    <div class="col-md-7">
+                        <label class="font-weight-bold" for="file">Seleccione el libro PDF que desea subir </label>
+                        <input type="file" name="file" id="chooseFile" accept="application/pdf">
+                    </div>
+                    <br>
+                    <div class="col-md-7">
+                        <label class="font-weight-bold" for="portada">Seleccione la IMAGEN de la portada que desea subir </label>
+                        <input type="file" name="portada" id="chooseFile" accept="image/*">
                     </div>
                     <br>
                 </div>

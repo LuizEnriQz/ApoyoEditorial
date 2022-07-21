@@ -11,8 +11,10 @@
                 <img src="{{ '/editorial/storage/app/public/colecciones_portada/' . $nov->portada }}" alt="...">
                 <div class="d-grid gap-2">
                     <a href="{{route('visitante.leerNovedad', [$nov->id, $nov->file ] )}}" class="btn btn-primary">Leer Documento</a>
+                    {{-- <iframe src="{{ '/editorial/storage/app/public/colecciones_pdfs/' . $nov->file }}" alt="..." width="100%" height="500px">
+                    </iframe> --}}
 
-                    <a href="{{route('visitante.descargarNovedad', [$nov->id, $nov->file ] )}}">Descargar Documento</a>
+                    <a href="{{route('visitante.descargarNovedad', [$nov->id, $nov->file ] )}}" class="btn btn-info">Descargar Documento</a>
                 </div>
             </div>
         </div>

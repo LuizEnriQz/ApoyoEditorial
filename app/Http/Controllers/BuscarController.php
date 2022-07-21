@@ -104,7 +104,7 @@ class BuscarController extends Controller
 
                 <div class="btn-acciones">
                     <div class="btn-circle">
-                        <a href="'.$mostrarLibro.'" role="button" class="btn btn-info" title="Mostrar Libro">Mostrar Libro
+                        <a href="'.$mostrarLibro.'" role="button" class="btn btn-info" title="Mostrar Libro">Mostrar
                             <i class="fa fa-file-pdf-o"></i>
                         </a>
                     </div>
@@ -128,25 +128,59 @@ class BuscarController extends Controller
 
             //--------Mostrar Noticia-------//
 
-            // $mostrarNoticia = route('mostrarNoticia', $value['id']);
+            $mostrarNoticia = route('mostrarNoticia', $value['id']);
 
-            // $path = storage_path('app/public/noticias_pdfs/' . $mostrarNoticia->file);
-            // $header = [
-            //     'Content-Type' => 'application/pdf',
-            //     'Content-Disposition' => 'inline; filename="' . $mostrarNoticia->file . '"'
-            // ];
-
-            $imgN =  $value['file'];
             $accionesNoticia = '
-            <div class="btn-acciones">
-                <div class="btn-circle">
-                   <a role="button" data-bs-toggle="modal" data-bs-target="#NoticiaModal"
-                   onClick="mostrarImg('.$imgN.')"> Mostrar Noticia </a>
+
+                <div class="btn-acciones">
+                    <div class="btn-circle">
+                        <a href="'.$mostrarNoticia.'" role="button" class="btn btn-info" title="Mostrar Libro">Mostrar
+                            <i class="fa fa-file-pdf-o"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
+
             ';
 
+            // $accionesNoticia = '
+            // <div class="btn-acciones">
+            //     <div class="btn-circle">
+            //         <a href="" data-target=¨NoticiaModal-'.$value['id'].'¨ data-toggle=¨modal¨ role="button" class="btn btn-info" title="Mostrar Noticia">Mostrar Noticia
+            //             <i class="fa fa-file-pdf-o"></i>
+            //         </a>
+            //     </div>
+            // </div>
+            // ';
 
+//             $modalNoticia = '
+//                 <div class="modal fade" id="NoticiaModal-'.$value['id'].'" tabindex="-1" aria-labelledby=NoticiaModalLabel" aria-hidden="true">
+//                     <div class="modal-dialog">
+//                         <div class="modal-content">
+//
+//                             <a href="" data-lightbox="image-1">
+//                                 <div class="thumb">
+//                                     <div class="image">
+//                                         <img src="{{url(`/storage/noticias_img`)}}" style="width: 600px; height: 600px;">
+//                                     </div>
+//                                 </div>
+//                             </a>
+//                             <div class="modal-header"
+//                                 <h3 class="modal-title text-center" id="NoticiaModalLabel">
+//                                 </h3>
+//                                 <button type="button" class="btn-close" data-bs-dismiss="close" aria-label="close"></button>
+//                             </div>
+//
+//                             <div class="modal-body" id="NoticiaModalLabel2">
+//                                 <img id="NoticiaImg" src="#">
+//                             </div>
+//
+//                             <div class="modal-footer">
+//                                 <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cerrar</button>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             ';
 
             if($categoria == 'noticias') {
 
@@ -157,6 +191,7 @@ class BuscarController extends Controller
                     $value['fecha'],
                     $value['descripcion'],
                     $accionesNoticia,
+                    // $modalNoticia,
                 );
             }
 
@@ -167,7 +202,7 @@ class BuscarController extends Controller
 
                 <div class="btn-acciones">
                     <div class="btn-circle">
-                        <a href="'.$mostrarRevista.'" role="button" class="btn btn-info" title="Mostrar Revista">Mostrar Revista
+                        <a href="'.$mostrarRevista.'" role="button" class="btn btn-info" title="Mostrar Revista">Mostrar
                             <i class="fa fa-file-pdf-o"></i>
                         </a>
                     </div>
@@ -197,7 +232,7 @@ class BuscarController extends Controller
 
                 <div class="btn-acciones">
                     <div class="btn-circle">
-                        <a href="'.$mostrarColeccion.'" role="button" class="btn btn-info" title="Mostrar Coleccion">Mostrar Coleccion
+                        <a href="'.$mostrarColeccion.'" role="button" class="btn btn-info" title="Mostrar Coleccion">Mostrar
                             <i class="fa fa-file-pdf-o"></i>
                         </a>
                     </div>
@@ -219,11 +254,6 @@ class BuscarController extends Controller
                 );
             }
         }
-
-        //$data = array_merge($libros,$revistas,$noticias);
-        //dd($vsTable);
-
-
         return $data;
     }
 }

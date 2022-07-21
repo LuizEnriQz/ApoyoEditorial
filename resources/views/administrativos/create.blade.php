@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-4 ml-3">
+        <div class="col-md-7 ml-3">
             <h2>Captura de Administrativo</h2>
         </div>
         <hr>
@@ -40,7 +40,7 @@
                             <label class="font-weight-bold" for="categoria">Categoria </label>
                             <select class="form-select" type="text" class="select" id="categoria" name="categoria">
                                 <option value="miemComite">Miembros de Comité</option>
-                                <option value="funcionarios">funcionarios</option>
+                                <option value="directivos">Directivos</option>
                             </select>
                         </div>
                         <div class="col-md-7">

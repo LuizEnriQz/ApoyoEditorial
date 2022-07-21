@@ -21,47 +21,32 @@
                     <div class="col-md-7">
                         <label class="font-weight-bold" for="titulo">Titulo </label>
                         <input  type="text" class="box form-control" id="titulo" name="titulo"
-                               value="{{ old('titulo') }}">
+                               value="{{ $coleccion->titulo }}">
                     </div>
                     <div class="col-md-3">
                         <label class="font-weight-bold" for="anio">Año </label>
                         <input type="text" class="box form-control" id="anio" name="anio"
-                               value="{{ old('telefono') }}">
+                               value="{{ $coleccion->anio }}">
                     </div>
                     <div class="col-md-10">
                         <label class="font-weight-bold" for="coordinadores">Coordinadores </label>
                         <input type="text" class="box form-control" id="coordinadores" name="coordinadores"
-                               value="{{ old('coordinadores') }}">
+                               value="{{ $coleccion->coordinadores }}">
                     </div>
                     <div class="col-md-10">
                         <label class="font-weight-bold" for="descripcion">Descripción </label>
                         <input type="text" class=" box form-control" id="descripcion" name="descripcion"
-                               value="{{ old('descripcion') }}">
-                    </div>
-                    <div class="col-md-7">
-                        <label class="font-weight-bold" for="tema">Tema </label>
-                        <input type="text" class="box form-control" id="tema" name="tema"
-                               value="{{ old('tema') }}">
+                               value="{{ $coleccion->descripcion }}">
                     </div>
                     <div class="col-md-3">
                         <label class="font-weight-bold" for="paginas">Páginas </label>
                         <input type="text" class="box form-control" id="paginas" name="paginas"
-                               value="{{ old('paginas') }}">
-                    </div>
-                    <div class="col-md-7">
-                        <label class="font-weight-bold" for="coleccion">Colección </label>
-                        <input type="text" class="box form-control" id="coleccion" name="coleccion"
-                               value="{{ old('coleccion') }}">
+                               value="{{ $coleccion->paginas}}">
                     </div>
                     <div class="col-md-3">
                         <label class="font-weight-bold" for="isbn">ISBN </label>
                         <input type="text" class="box form-control" id="isbn" name="isbn"
-                               value="{{ old('isbn') }}">
-                    </div>
-                    <div class="col-md-7">
-                        <label class="font-weight-bold" for="novedad">Novedad </label>
-                        <input type="text" class="box form-control" id="novedad" name="novedad"
-                               value="{{ old('novedad') }}">
+                               value="{{ $coleccion->isbn}}">
                     </div>
                     <div class="col-md-3">
                         <label class="font-weight-bold" for="categoria">Categoria </label>
@@ -69,6 +54,14 @@
                                <option value="coleccion">Colección</option>
                                <option value="novedad">Novedad</option>
                         </select>
+                    </div>
+                    <div class="col-md-7">
+                        <label class="font-weight-bold" for="file">Seleccione el ARCHIVO PDF que desea subir </label>
+                        <input type="file" name="file"  id="chooseFile" accept="application/pdf">
+                    </div>
+                    <div class="col-md-7">
+                        <label class="font-weight-bold" for="portada">Seleccione la PORTADA que desea subir </label>
+                        <input type="file" name="portada"  id="chooseFile" accept="image/*">
                     </div>
                     <br>
                 </div>

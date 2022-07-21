@@ -6,8 +6,8 @@
 
     <div class="container">
     <div class="row">
-        <div class="col-md-4 ml-3">
-            <h2>Captura de Colección</h2>
+        <div class="col-md-7 ml-3">
+            <h2>Captura de Colección / Novedades</h2>
         </div>
         <hr>
     </div>
@@ -39,31 +39,31 @@
                             <input type="text" class=" box form-control" id="descripcion" name="descripcion"
                                    value="{{ old('descripcion') }}">
                         </div>
-                        <div class="col-md-7">
+                        {{-- <div class="col-md-7">
                             <label class="font-weight-bold" for="tema">Tema </label>
                             <input type="text" class="box form-control" id="tema" name="tema"
                                    value="{{ old('tema') }}">
-                        </div>
+                        </div> --}}
                         <div class="col-md-3">
                             <label class="font-weight-bold" for="paginas">Páginas </label>
                             <input type="text" class="box form-control" id="paginas" name="paginas"
                                    value="{{ old('paginas') }}">
                         </div>
-                        <div class="col-md-7">
+                        {{-- <div class="col-md-7">
                             <label class="font-weight-bold" for="coleccion">Colección </label>
                             <input type="text" class="box form-control" id="coleccion" name="coleccion"
                                    value="{{ old('coleccion') }}">
-                        </div>
+                        </div> --}}
                         <div class="col-md-3">
                             <label class="font-weight-bold" for="isbn">ISBN </label>
                             <input type="text" class="box form-control" id="isbn" name="isbn"
                                    value="{{ old('isbn') }}">
                         </div>
-                        <div class="col-md-7">
+                        {{-- <div class="col-md-7">
                             <label class="font-weight-bold" for="novedad">Novedad </label>
                             <input type="text" class="box form-control" id="novedad" name="novedad"
                                    value="{{ old('novedad') }}">
-                        </div>
+                        </div> --}}
                         <div class="col-md-3">
                             <label class="font-weight-bold" for="categoria">Categoria </label>
                             <select class="form-select" type="text" class="select" id="categoria" name="categoria">

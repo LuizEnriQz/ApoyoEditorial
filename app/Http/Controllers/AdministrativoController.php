@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
+
 class AdministrativoController extends Controller
 {
     /**
@@ -18,6 +19,18 @@ class AdministrativoController extends Controller
         $administrativos = Administrativo::where('activo','=',1)->get();
         $tadministrativo = $this->cargaDT($administrativos);
         return  view('administrativos.index')->with('administrativos',$tadministrativo);
+    }
+
+    public function directorio()
+    {
+        $administrativos = Administrativo::where('categoria','=','directivos')->get();
+        return view('administrativos.directorio')->with('administrativo', $administrativos);
+    }
+
+    public function consejoEditorial()
+    {
+        $administrativos = Administrativo::where('categoria','=','miemComite')->get();
+        return view('administrativos.consejoEditorial')->with('administrativo', $administrativos);
     }
 
     public function  cargaDT($consulta)
@@ -163,6 +176,7 @@ class AdministrativoController extends Controller
         $administrativo->email = $request->input('email');
         $administrativo->categoria = $request->input('categoria');
         $administrativo->resenia = $request->input('resenia');
+        $administrativo->file = $request->file->getClientOriginalName();
         $administrativo->update();
         return redirect('administrativos');
     }

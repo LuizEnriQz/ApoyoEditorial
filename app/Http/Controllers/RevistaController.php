@@ -142,7 +142,7 @@ class RevistaController extends Controller
             'autores'=>'required',
             'descripcion'=>'required',
             'file'=>'required|mimes:pdf',
-            'portada'=>'required|image|mimes:jpg,jpeg,gif,svg',
+            'portada'=>'required|image|mimes:jpg,jpeg,png,gif,svg',
         ]);
 
         $revistas = new Revista();
@@ -213,6 +213,8 @@ class RevistaController extends Controller
         $revista->ensayo = $request->input('ensayo');
         $revista->autores = $request->input('autores');
         $revista->descripcion = $request->input('descripcion');
+        $revistas->file = $request->file->getClientOriginalName();
+        $revistas->portada = $request->portada->getClientOriginalName();
         $revista->update();
         return redirect('revistas');
     }
