@@ -96,7 +96,7 @@
                 <th>Titulo</th>
                 <th>Coordinadores</th>
                 <th>Descripción</th>
-                <th>Tema</th>
+                {{-- <th>Tema</th> --}}
                 <th>Colección</th>
                 <th>Categoria</th>
                 <th>Acciones</th>

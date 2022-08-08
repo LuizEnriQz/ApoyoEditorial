@@ -54,7 +54,7 @@ class BuscarController extends Controller
                 ->orWhere('titulo', 'LIKE', '%' . $busqueda . '%')
                 ->orWhere('coordinadores', 'LIKE', '%' . $busqueda . '%')
                 ->orWhere('descripcion', 'LIKE', '%' . $busqueda . '%')
-                ->orWhere('tema', 'LIKE', '%' . $busqueda . '%')
+                // ->orWhere('tema', 'LIKE', '%' . $busqueda . '%')
                 ->orWhere('coleccion', 'LIKE', '%' . $busqueda . '%')
                 ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
                 ->get();
