@@ -12,16 +12,16 @@
                             <li class="w-100"><a href="{{ route('administrativos.directorio') }}">Directorio</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Lineamientos y normas editoriales</a></li>
+                    <li><a href="http://148.202.6.72/apoyoeditorial/sites/default/files/Lineamientos_y_normas.pdf">Lineamientos y normas editoriales</a></li>
                     <li><a href="{{ route('administrativos.consejoEditorial')}}">Consejo Editorial</a></li>
                     <li><a href="#">Publiaciones</a>
                         <ul class="middle_submenu">
                             <li><a href="#">Novedades 2020</a></li>
-                            <li><a href="#">Catálogo 2019</a></li>
-                            <li><a href="#">Catálogo 2018</a></li>
-                            <li><a href="#">Catálogo 2013 - 2017</a></li>
-                            <li><a href="#">Catálogo 2012</a></li>
-                            <li><a href="#">Catálogo 1996-2011</a></li>
+                            <li><a href="http://148.202.6.72/apoyoeditorial/sites/default/files/catalogo_2019.pdf">Catálogo 2019</a></li>
+                            <li><a href="http://148.202.6.72/apoyoeditorial/sites/default/files/catalogo_2018.pdf">Catálogo 2018</a></li>
+                            <li><a href="http://148.202.6.72/apoyoeditorial/sites/default/files/CATALAOGO_2017.pdf">Catálogo 2013 - 2017</a></li>
+                            <li><a href="http://148.202.6.72/apoyoeditorial/sites/default/files/catalogo_2012.pdf">Catálogo 2012</a></li>
+                            <li><a href="http://148.202.6.72/apoyoeditorial/sites/default/files/catalogo_95_11.pdf">Catálogo 1996-2011</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Colecciones</a>

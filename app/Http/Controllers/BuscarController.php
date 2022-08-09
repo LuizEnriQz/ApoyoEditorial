@@ -247,7 +247,7 @@ class BuscarController extends Controller
                     $value['titulo'],
                     $value['coordinadores'],
                     $value['descripcion'],
-                    $value['tema'],
+                    // $value['tema'],
                     $value['coleccion'],
                     $value['categoria'],
                     $accionesColeccion,
