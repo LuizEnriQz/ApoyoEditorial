@@ -6,6 +6,9 @@ rel="stylesheet"
 
 @section('content')
 
+@include('layouts.sub-menu')
+
+
     <div class="container">
         <div class="row justify-content-center">
 

@@ -67,6 +67,12 @@ class RevistaController extends Controller
         return view('revistas.catalogo')->with('revistas',$revistas);
     }
 
+    public function revistaCien()
+    {
+        $revistas= Revista::get();
+        return view('revistas.revistasCientificas')->with('revistas',$revistas);
+    }
+
     public function visitas()
     {
         $revistas = Revista::where('activo','=',1)->get();

@@ -40,7 +40,12 @@ Route::resource('administrativos','App\Http\Controllers\AdministrativoController
 Route::resource('colecciones','App\Http\Controllers\ColeccionController')->middleware('auth');
 Route::resource('articulos','App\Http\Controllers\ArticuloController')->middleware('auth');
 
+//Ruta de las Revistas Cientificas
 
+Route::get('/revistasCientificas', array(
+    // 'middleware'=> 'auth',
+    'uses'=>'App\Http\Controllers\RevistaController@revistaCien'
+))->name('revistas.revistasCientificas');
 
 // borrado logico route
 

@@ -36,7 +36,7 @@
                             <li><a href="#">Estudios del hombre</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Revistas Cientificas</a></li>
+                    <li><a href="{{ route('revistas.revistasCientificas') }}">Revistas Cientificas</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </nav>
