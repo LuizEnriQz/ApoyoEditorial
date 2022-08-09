@@ -218,7 +218,7 @@
 
     </div>
     <div class="footer p-2">
-        <div class="container">
+        <div class="container" id="contact">
             <div class="row justify-content-center align-items-center">
                 <div class="col-sm-12 col-md-6">
                     <img class="footer_img img-fluid" src="{{ asset('img/LOGO_RED_UNI_JAL.png') }}"

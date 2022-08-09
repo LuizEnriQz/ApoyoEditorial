@@ -37,7 +37,7 @@
                         </ul>
                     </li>
                     <li><a href="{{ route('revistas.revistasCientificas') }}">Revistas Cientificas</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
         </div>
