@@ -22,12 +22,12 @@
                         <div class="col-md-7">
                             <label class="font-weight-bold" for="titulo">Titulo </label>
                             <input  type="text" class="box form-control" id="titulo" name="titulo"
-                                   value="{{ old('titulo') }}">
+                                   value="{{ old('titulo') }}" required>
                         </div>
                         <div class="col-md-3">
                             <label class="font-weight-bold" for="anio">Año </label>
                             <input type="text" class="box form-control" id="anio" name="anio"
-                                   value="{{ old('telefono') }}">
+                                   value="{{ old('telefono') }}" required>
                         </div>
                         <div class="col-md-10">
                             <label class="font-weight-bold" for="coordinadores">Coordinadores </label>
@@ -37,7 +37,7 @@
                         <div class="col-md-10">
                             <label class="font-weight-bold" for="descripcion">Descripción </label>
                             <input type="text" class=" box form-control" id="descripcion" name="descripcion"
-                                   value="{{ old('descripcion') }}">
+                                   value="{{ old('descripcion') }}" required >
                         </div>
                         {{-- <div class="col-md-7">
                             <label class="font-weight-bold" for="tema">Tema </label>
@@ -47,7 +47,7 @@
                         <div class="col-md-3">
                             <label class="font-weight-bold" for="paginas">Páginas </label>
                             <input type="text" class="box form-control" id="paginas" name="paginas"
-                                   value="{{ old('paginas') }}">
+                                   value="{{ old('paginas') }}" required>
                         </div>
                         {{-- <div class="col-md-7">
                             <label class="font-weight-bold" for="coleccion">Colección </label>
@@ -57,7 +57,7 @@
                         <div class="col-md-3">
                             <label class="font-weight-bold" for="isbn">ISBN </label>
                             <input type="text" class="box form-control" id="isbn" name="isbn"
-                                   value="{{ old('isbn') }}">
+                                   value="{{ old('isbn') }}" required>
                         </div>
                         {{-- <div class="col-md-7">
                             <label class="font-weight-bold" for="novedad">Novedad </label>
@@ -74,7 +74,7 @@
                         <br>
                         <div class="col-md-7">
                             <label class="font-weight-bold" for="file">Seleccione el ARCHIVO PDF que desea subir </label>
-                            <input type="file" name="file"  id="chooseFile" accept="application/pdf">
+                            <input type="file" name="file"  id="chooseFile" accept="application/pdf" required>
                         </div>
                         <div class="col-md-7">
                             <label class="font-weight-bold" for="portada">Seleccione la PORTADA que desea subir </label>

@@ -111,7 +111,7 @@ rel="stylesheet"
             <div>
                  <table id="example" class="table table-striped table-bordered" style="width:100%">
                      <thead>
-                     <th>ID_Documento</th>
+                     {{-- <th>ID_Documento</th> --}}
                      <th>Sección</th>
                      <th>Nombre archivo</th>
                      <th>Visitas</th>

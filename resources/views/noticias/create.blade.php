@@ -20,12 +20,12 @@
                     <div class="col-md-4">
                         <label class="font-weight-bold" for="titulo">Titulo </label>
                         <input type="text" class="form-control" id="titulo" name="titulo"
-                               value="{{ old('titulo') }}">
+                               value="{{ old('titulo') }}"required>
                     </div>
                     <div class="col-md-4">
                         <label class="font-weight-bold" for="fecha">Fecha </label>
                         <input type="date" class="form-control" id="fecha" name="fecha"
-                               value="{{ old('fecha') }}">
+                               value="{{ old('fecha') }}"required>
                     </div>
                     <div class="col-md-4">
                         <label class="font-weight-bold" for="descripcion">Descripción </label>

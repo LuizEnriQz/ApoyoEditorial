@@ -46,7 +46,7 @@ class AdminDashController extends Controller
 
 
             $topVistas[$key] = array(
-                $value['id_registro'],
+                // $value['id_registro'],
                 $seccion,
                 $value['nombre_archivo'],
                 $value['TOTAL'],

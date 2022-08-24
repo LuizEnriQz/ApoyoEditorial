@@ -45,18 +45,18 @@ class ColeccionController extends Controller
         }
 
             $coleccion[$key] = array(
-                $value['id'],
+                // $value['id'],
                 $value['titulo'],
-                $value['coordinadores'],
-                $value['descripcion'],
+                // $value['coordinadores'],
+                // $value['descripcion'],
                 $value['anio'],
-                $value['paginas'],
+                // $value['paginas'],
                 // $value['tema'],
                 // $value['coleccion'],
-                $value['isbn'],
+                // $value['isbn'],
                 // $value['novedad'],
                 $value['file'],
-                $value['portada'],
+                // $value['portada'],
                 $value['categoria'],
 
                 $acciones,
@@ -96,11 +96,11 @@ class ColeccionController extends Controller
         }
 
             $coleccion[$key] = array(
-                $value['id'],
+                // $value['id'],
                 $value['titulo'],
-                $value['descripcion'],
+                // $value['descripcion'],
                 $value['anio'],
-                $value['isbn'],
+                // $value['isbn'],
                 $value['categoria'],
                 $totalVisitas,
                 $totalDescargas,
@@ -249,8 +249,20 @@ class ColeccionController extends Controller
        $coleccion->isbn = $request->input('isbn');
        // $coleccion->novedad = $request->input('novedad');
        $coleccion->categoria = $request->input('categoria');
-       $coleccion->file = $request->file->getClientOriginalName();
-       $coleccion->portada = $request->portada->getClientOriginalName();
+
+       if(isset($request->file)){
+
+           $coleccion->file = $request->file->getClientOriginalName();
+           $directorioArchivo = $request->file('file')->storeAs('public/colecciones_pdfs', $coleccion->file);
+           $Coleccion_modelo = new Coleccion();
+           $Coleccion_modelo->file_path = '/storage/app/public/' . $directorioArchivo;
+       }
+       if(isset($request->portada)){
+           $coleccion->portada = $request->portada->getClientOriginalName();
+           $directorioArchivo = $request->file('portada')->storeAs('public/colecciones_portada', $coleccion->portada);
+            $Coleccion_modelo = new Coleccion();
+           $Coleccion_modelo->file_path = '/storage/app/public/' . $directorioArchivo;
+       }
        $coleccion->update();
 
        return redirect('colecciones');

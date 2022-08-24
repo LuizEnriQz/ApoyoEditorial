@@ -48,10 +48,10 @@ class NoticiaController extends Controller
 
             $noticias[$key] = array(
 
-                $value['id'],
+                // $value['id'],
                 $value['titulo'],
                 $value['fecha'],
-                $value['descripcion'],
+                // $value['descripcion'],
                 $value['file'],
                 $acciones,
             );
@@ -88,9 +88,9 @@ class NoticiaController extends Controller
         }
 
             $noticia[$key] = array(
-                $value['id'],
+                // $value['id'],
                 $value['titulo'],
-                $value['descripcion'],
+                // $value['descripcion'],
                 $totalVisitas,
                 $totalDescargas,
             );
@@ -147,7 +147,7 @@ class NoticiaController extends Controller
         $validateData = $this->validate($request,[
             'titulo'=>'required',
             'fecha'=>'required',
-            'descripcion'=>'required',
+            // 'descripcion'=>'required',
             'file'=>'required|image|mimes:jpg,png,jpeg,gif,svg',
         ]);
 
@@ -209,7 +209,14 @@ class NoticiaController extends Controller
         $noticia->titulo = $request->input('titulo');
         $noticia->fecha = $request->input('fecha');
         $noticia->descripcion = $request->input('descripcion');
-        $noticias->file = $request->file->getClientOriginalName();
+
+        if(isset($request->file)){
+               $noticia->file = $request->file->getClientOriginalName();
+               $directorioArchivo = $request->file('file')->storeAs('public/noticias_img', $noticia->file);
+               $Noticia_modelo = new Libro();
+               $Noticia_modelo->file_path = '/storage/app/public/' . $directorioArchivo;
+           }
+
         $noticia->update();
         return redirect('noticias');
     }

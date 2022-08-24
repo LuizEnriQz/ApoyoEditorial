@@ -12,9 +12,9 @@
      <div>
          <table id="example" class="table table-striped table-bordered" style="width:100%">
              <thead>
-             <th>ID</th>
+             {{-- <th>ID</th> --}}
              <th>Titulo</th>
-             <th>Descripción</th>
+             {{-- <th>Descripción</th> --}}
              <th>Relación de Visitas</th>
              <th>Relación de Descargas</th>
              </thead>

@@ -20,7 +20,7 @@
                                 @if (isset($portadasColecciones))
                                 @foreach ($portadasColecciones as $p)
                                 <li>
-                                    <img src="<?php echo asset('storage/colecciones_portada/' . $p->portadas); ?>" alt="Imagen Colecciones">
+                                    <img src="{{ str_replace("ApoyoEditorial/public/","ApoyoEditorial/",asset('/storage/app/public/colecciones_portada/' . $p->portadas))}}" alt="Imagen Colecciones">
                                 </li>
                                 @endforeach
                                 @else

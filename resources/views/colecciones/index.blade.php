@@ -13,18 +13,18 @@
         <div>
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
-                <th>ID</th>
+                {{-- <th>ID</th> --}}
                 <th>Titulo</th>
-                <th>Coordinadores</th>
-                <th>Descripción</th>
+                {{-- <th>Coordinadores</th> --}}
+                {{-- <th>Descripción</th> --}}
                 <th>Año</th>
-                <th>Páginas</th>
+                {{-- <th>Páginas</th> --}}
                 {{-- <th>Tema</th> --}}
                 {{-- <th>Colección</th> --}}
-                <th>ISBN</th>
+                {{-- <th>ISBN</th> --}}
                 {{-- <th>Novedad</th> --}}
                 <th>Nombre archivo PDF</th>
-                <th>Portada</th>
+                {{-- <th>Portada</th> --}}
                 <th>Categoría</th>
                 <th>Acciones</th>
                 </thead>

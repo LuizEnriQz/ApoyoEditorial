@@ -20,20 +20,20 @@
                     <div class="row align-items-center">
                         <div class="col-md-7">
                             <label class="font-weight-bold" for="nombre">Nombre </label>
-                            <input type="text" class="box form-control" id="nombre" name="nombre" value="{{ old('nombre') }}">
+                            <input type="text" class="box form-control" id="nombre" name="nombre" value="{{ old('nombre') }}"required>
                         </div>
                         <div class="col-md-3">
                             <label class="font-weight-bold" for="isbn">ISBN </label>
                             <input type="text" class="box form-control" id="isbn" name="isbn"
-                                   value="{{ old('isbn') }}">
+                                   value="{{ old('isbn') }}"required>
                         </div>
                         <div class="col-md-7">
                             <label class="font-weight-bold" for="autores">Autores </label>
-                            <input type="text" class=" box form-control" id="autores" name="autores" value="{{ old('autores') }}">
+                            <input type="text" class=" box form-control" id="autores" name="autores" value="{{ old('autores') }}"required>
                         </div>
                         <div class="col-md-2">
                             <label class="font-weight-bold" for="anio">Año </label>
-                            <input type="int" class="box form-control" id="anio" name="anio" value="{{ old('anio') }}">
+                            <input type="int" class="box form-control" id="anio" name="anio" value="{{ old('anio') }}"required>
                         </div>
                         <div class="col-md-7">
                             <label class="font-weight-bold" for="descripcion">Descripción </label>

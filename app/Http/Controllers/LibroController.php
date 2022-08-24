@@ -49,14 +49,14 @@ class LibroController extends Controller
 
             $libros[$key] = array(
 
-                $value['id'],
+                // $value['id'],
                 $value['nombre'],
                 $value['autores'],
                 $value['isbn'],
                 $value['anio'],
-                $value['descripcion'],
+                // $value['descripcion'],
                 $value['file'],
-                $value['portada'],
+                // $value['portada'],
                 $acciones,
             );
         }
@@ -91,9 +91,9 @@ class LibroController extends Controller
         }
 
             $libro[$key] = array(
-                $value['id'],
+                // $value['id'],
                 $value['nombre'],
-                $value['descripcion'],
+                // $value['descripcion'],
                 $totalVisitas,
                 $totalDescargas,
             );
@@ -157,7 +157,7 @@ class LibroController extends Controller
             'anio'=>'required',
             'isbn'=>'required',
             'autores'=>'required',
-            'descripcion'=>'required',
+            // 'descripcion'=>'required',
             'file'=>'required|mimes:pdf',
             'portada'=>'required|image|mimes:jpg,png,jpeg,gif,svg',
 
@@ -234,8 +234,21 @@ class LibroController extends Controller
         $libro->isbn = $request->input('isbn');
         $libro->autores = $request->input('autores');
         $libro->descripcion = $request->input('descripcion');
-        $libro->file = $request->file->getClientOriginalName();
-        $libro->portada = $request->portada->getClientOriginalName();
+
+        if(isset($request->file)){
+
+               $libro->file = $request->file->getClientOriginalName();
+               $directorioArchivo = $request->file('file')->storeAs('public/libros_pdfs', $libro->file);
+               $Libro_modelo = new Libro();
+               $Libro_modelo->file_path = '/storage/app/public/' . $directorioArchivo;
+           }
+        if(isset($request->portada)){
+               $libro->portada = $request->portada->getClientOriginalName();
+               $directorioArchivo = $request->file('portada')->storeAs('public/libros_portada', $libro->portada);
+               $Libro_modelo = new Libro();
+               $Libro_modelo->file_path = '/storage/app/public/' . $directorioArchivo;
+           }
+
         $libro->update();
         return redirect('libros');
     }
