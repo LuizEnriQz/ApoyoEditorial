@@ -24,8 +24,8 @@ class BuscarController extends Controller
                 ->orWhere('nombre', 'LIKE', '%' . $busqueda . '%')
                 ->orWhere('autores', 'LIKE', '%' . $busqueda . '%')
                 ->orWhere('anio', 'LIKE', '%' . $busqueda . '%')
-                ->orWhere('descripcion', 'LIKE', '%' . $busqueda . '%')->get();
-
+                ->get();
+                // ->orWhere('descripcion', 'LIKE', '%' . $busqueda . '%')->get();
             $libros = $this->cargaDT($libros,$categoria);
 
             $categoria = 'noticias';
@@ -33,7 +33,8 @@ class BuscarController extends Controller
                 ->where('id', '=', $busqueda)
                 ->orWhere('titulo', 'LIKE', '%' . $busqueda . '%')
                 ->orWhere('fecha', 'LIKE', '%' . $busqueda . '%')
-                ->orWhere('descripcion', 'LIKE', '%' . $busqueda . '%')->get();
+                ->orWhere('descripcion', 'LIKE', '%' . $busqueda . '%')
+                ->get();
 
             $noticias = $this->cargaDT($noticias,$categoria);
 
@@ -52,10 +53,10 @@ class BuscarController extends Controller
             $coleccion = Coleccion::where('activo', '=', '1')
                 ->where('id', '=', $busqueda)
                 ->orWhere('titulo', 'LIKE', '%' . $busqueda . '%')
-                ->orWhere('coordinadores', 'LIKE', '%' . $busqueda . '%')
-                ->orWhere('descripcion', 'LIKE', '%' . $busqueda . '%')
+                // ->orWhere('coordinadores', 'LIKE', '%' . $busqueda . '%')
+                // ->orWhere('descripcion', 'LIKE', '%' . $busqueda . '%')
                 // ->orWhere('tema', 'LIKE', '%' . $busqueda . '%')
-                ->orWhere('coleccion', 'LIKE', '%' . $busqueda . '%')
+                // ->orWhere('coleccion', 'LIKE', '%' . $busqueda . '%')
                 ->orWhere('categoria', 'LIKE', '%' . $busqueda . '%')
                 ->get();
 
@@ -115,11 +116,11 @@ class BuscarController extends Controller
             if($categoria == 'libros') {
                 $data[$key] = array(
 
-                    //$value['id'],
+                    // $value['id'],
                     $value['nombre'],
                     $value['autores'],
                     $value['anio'],
-                    $value['descripcion'],
+                    // $value['descripcion'],
 
                     $accionesLibro,
 
@@ -186,10 +187,10 @@ class BuscarController extends Controller
 
                 $data[$key] = array(
 
-                    //$value['id'],
+                    // $value['id'],
                     $value['titulo'],
                     $value['fecha'],
-                    $value['descripcion'],
+                    // $value['descripcion'],
                     $accionesNoticia,
                     // $modalNoticia,
                 );
@@ -213,7 +214,7 @@ class BuscarController extends Controller
             if($categoria == 'revistas') {
                 $data[$key] = array(
 
-                    //$value['id'],
+                    $value['id'],
                     $value['nombre'],
                     $value['anio'],
                     $value['edicion'],
@@ -243,12 +244,12 @@ class BuscarController extends Controller
             if($categoria == 'coleccion') {
                 $data[$key] = array(
 
-                    //$value['id'],
+                    // $value['id'],
                     $value['titulo'],
-                    $value['coordinadores'],
-                    $value['descripcion'],
+                    // $value['coordinadores'],
+                    // $value['descripcion'],
                     // $value['tema'],
-                    $value['coleccion'],
+                    // $value['coleccion'],
                     $value['categoria'],
                     $accionesColeccion,
                 );

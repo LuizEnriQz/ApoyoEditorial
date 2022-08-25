@@ -106,66 +106,73 @@
                 </button>
             </div>
 
-            <div <class="container-fluid">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="a">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" >
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ route('home') }}">Inicio</a>
+                        </li>
+                        {{-- @if (Route::has('login'))
+                            <li class="nav-item border-start">
+                                <a class="nav-link text-white" href="{{ route('login') }}">Inicio de
+                                    Sesión</a>
+                            </li>
+                        @endif
+
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class=" nav-link text-white" href="{{ route('register') }}">Registro</a>
+                            </li>
+                        @endif --}}
+
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item border-start">
+                                    <a class="nav-link text-white" href="{{ route('login') }}">Inicio de
+                                        Sesión</a>
+                                </li>
+                            @endif
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class=" nav-link text-white" href="{{ route('register') }}">Registro</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown border-left">
+                                <a id="navbarDropdown" class="text-white nav-link dropdown-toggle" href="#"
+                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                        {{ __('Salir') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+
+                    </ul>
+                    </div>
+            </div>
+
+            {{-- <div <class="container-fluid">
                 <div class="col-sm-12 col-md-12">
                     <div class="collapse navbar-collapse" id="a">
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav align-items-center">
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{{ route('home') }}">Inicio</a>
                             </li>
-                            {{-- <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white" id="red_universitaria" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false" href="#">Red universitaria</a>
-                                <ul class="dropdown-menu" aria-labelledby="red_universitaria">
-                                    <li><a class="dropdown-item" href="http:\\www.udg.mx">Universidad de Guadalajara</a></li>
-                                    <li><a class="dropdown-item" href="http:\\www.udg.mx/directorio">Directorio Oficial</a></li>
-                                    <li><a class="dropdown-item" href="http:\\www.cuaad.udg.mx/">CUAAD</a></li>
-                                    <li><a class="dropdown-item" href="http:\\www.cucba.udg.mx/">CUCBA</a></li>
-                                    <li><a class="dropdown-item" href="https:\\www.cucea.udg.mx/">CUCEA</a></li>
-                                    <li><a class="dropdown-item" href="http:\\www.cucei.udg.mx/">CUCEI</a></li>
-                                    <li><a class="dropdown-item" href="https:\\www.cucs.udg.mx/">CUCS</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white" id="admin" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false" href="#">Adminsitración y
-                                    gobierno</a>
-                                <ul class="dropdown-menu" aria-labelledby="admin">
-                                    <li><a class="dropdown-item" href="http:\\www.hcgu.udg.mx/">Consejo General</a></li>
-                                    <li><a class="dropdown-item" href="https:\\rectoria.udg.mx/">Rectoría General</a></li>
-                                    <li><a class="dropdown-item" href="http:\\www.vicerrectoria.udg.mx/">Vicerrectoria Ejecutiva</a></li>
-                                    <li><a class="dropdown-item" href="https:\\secgral.udg.mx/">Secretaria General</a></li>
-                                    <li><a class="dropdown-item" href="https:\\secgral.udg.mx/">Contralora General</a></li>
-                                    <li><a class="dropdown-item" href="https:\\abogaciageneral.udg.mx/">Oficina de la Abogacía General</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="https:\\finanzas.udg.mx/">Finanzas</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white" id="otros" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false" href="#">Otros sitios
-                                    UdeG</a>
-                                <ul class="dropdown-menu" aria-labelledby="otros">
-                                    <li><a class="dropdown-item" href="http:\\www.bibliotecas.udg.mx/">Biblioteca</a></li>
-                                    <li><a class="dropdown-item" href="http:\\www.carteleraudg.medios.udg.mx/">Cartelera UDG</a></li>
-                                    <li><a class="dropdown-item" href="https:\\cultura.udg.mx/">Cultura UDG</a></li>
-                                    <li><a class="dropdown-item" href="https:\\www.fil.com.mx/">FIL - Feria Internacional del Libro de
-                                            Guadalajara</a></li>
-                                    <li><a class="dropdown-item" href="http:\\flip.cga.udg.mx/">FILP</a></li>
-                                    <li><a class="dropdown-item" href="https:\\fundacion.udg.mx/">Fundación UDG</a></li>
-                                    <li><a class="dropdown-item" href="http:\\www.gaceta.udg.mx/">Gaceta Universitaria</a></li>
-                                    <li><a class="dropdown-item" href="https:\\leonesnegrosudg.mx/">Leones Negros</a></li>
-                                    <li><a class="dropdown-item" href="https:\\www.udg.mx/normatividad">Normatividad</a></li>
-                                    <li><a class="dropdown-item" href="http:\\www.pregrado.udg.mx/">Programas Educativos de Posgrado</a>
-                                    </li>
-                                </ul>
-                            </li> --}}
-                            {{-- <li class="nav-item"><a class="nav-link text-white" href="https:\\www.udg.mx/">UDG</a>
-                            </li> --}}
                             @guest
                                 @if (Route::has('login'))
                                     <li class="nav-item border-start">
-                                        <a class=" nav-link text-white" href="{{ route('login') }}">Inicio de
+                                        <a class="nav-link text-white" href="{{ route('login') }}">Inicio de
                                             Sesión</a>
                                     </li>
                                 @endif
@@ -198,7 +205,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </nav>
 
 

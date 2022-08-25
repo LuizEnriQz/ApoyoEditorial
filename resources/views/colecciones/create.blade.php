@@ -78,7 +78,7 @@
                         </div>
                         <div class="col-md-7">
                             <label class="font-weight-bold" for="portada">Seleccione la PORTADA que desea subir </label>
-                            <input type="file" name="portada"  id="chooseFile" accept="image/*">
+                            <input type="file" name="portada"  id="chooseFile" accept="image/*" required>
                         </div>
                     </div>
                     <br>

@@ -55,7 +55,7 @@
                     @if (isset($portadasRevistas))
                     @foreach ($portadasRevistas as $p)
                     <li>
-                        <img src="<?php echo asset('storage/revistas_portada/' . $p->portadas); ?>" alt="Imagen Revistas">
+                        <img src="{{ str_replace("ApoyoEditorial/public/","ApoyoEditorial/",asset('/storage/app/public/revistas_portada/' . $p->portadas))}}" alt="Imagen Revistas">
                     </li>
                     @endforeach
                     @else
@@ -77,7 +77,7 @@
                     @if (isset($portadasLibros))
                     @foreach ($portadasLibros as $p)
                     <li>
-                        <img src="<?php echo asset('storage/libros_portada/' . $p->portadas); ?>" alt="Imagen Libros">
+                        <img src="{{ str_replace("ApoyoEditorial/public/","ApoyoEditorial/",asset('/storage/app/public/libros_portada/' . $p->portadas))}}" alt="Imagen Libros">
                     </li>
                     @endforeach
                     @else
@@ -100,7 +100,7 @@
                     @if (isset($portadasNoticias))
                     @foreach ($portadasNoticias as $p)
                     <li>
-                        <img src="<?php echo asset('storage/noticias_img/' . $p->portadas); ?>" alt="Imagen Noticias">
+                        <img src="{{ str_replace("ApoyoEditorial/public/","ApoyoEditorial/",asset('/storage/app/public/noticias_img/' . $p->portadas))}}" alt="Imagen Noticias">
                     </li>
                     @endforeach
                     @else

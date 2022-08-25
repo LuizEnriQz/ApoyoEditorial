@@ -1,4 +1,7 @@
 @extends('layouts.app')
+<link href="{{asset('css/myCardStyle.css')}}"
+rel="stylesheet"
+/>
 @section('content')
 
 @include('layouts.sub-menu')
@@ -34,6 +37,16 @@
                 <div class="modal-header">
                     <h1>{{$not->titulo}}</h1><br>
                 </div>
+                @if($not->descripcion)
+                    <div class="modal-info--item">
+                        <b>Descripción:</b> {{$not->descripcion}}
+                    </div>
+                @endif
+                @if($not->fecha)
+                    <div class="modal-info--item">
+                        <b>Fecha:</b> {{$not->fecha}}
+                    </div>
+                @endif
                 <div class="modal-body">
                     <div class="img-border-rounded">
                         <img style="object-fit:contain; width:100%;" src="{{'/editorial/storage/app/public/noticias_img/'.$not->file}}"/>

@@ -20,7 +20,7 @@
                 <th>Nombre</th>
                 <th>autores</th>
                 <th>año</th>
-                <th>descripción</th>
+                {{-- <th>descripción</th> --}}
                 <th>Acciones</th>
 
                 </thead>
@@ -45,7 +45,7 @@
 
                 <th>Titulo</th>
                 <th>Fecha</th>
-                <th>Descripcion</th>
+                {{-- <th>Descripcion</th> --}}
                 <th>Acciones</th>
 
                 </thead>
@@ -94,10 +94,10 @@
                 <thead>
 
                 <th>Titulo</th>
-                <th>Coordinadores</th>
-                <th>Descripción</th>
+                {{-- <th>Coordinadores</th> --}}
+                {{-- <th>Descripción</th> --}}
                 {{-- <th>Tema</th> --}}
-                <th>Colección</th>
+                {{-- <th>Colección</th> --}}
                 <th>Categoria</th>
                 <th>Acciones</th>
                 </thead>
