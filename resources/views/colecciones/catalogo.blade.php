@@ -76,9 +76,13 @@ rel="stylesheet"
                             {{$nov->isbn}}
                         </div>
                         @endif
-                        <a href="{{route('visitante.leerNovedad', [$nov->id, $nov->file ] )}}" class="btn btn-leer">Leer Documento</a>
+                        <a href="{{route('visitante.leerNovedad', [$nov->id, $nov->file ] )}}" class="btn btn-leer has-icon">
+                        <i class='fas fa-book-open'></i>
+                        Leer Documento</a>
 
-                        <a href="{{route('visitante.descargarNovedad', [$nov->id, $nov->file ] )}}" class="btn btn-descargar">Descargar Documento</a>
+                        <a href="{{route('visitante.descargarNovedad', [$nov->id, $nov->file ] )}}" class="btn btn-descargar has-icon">
+                        <i class='fas fa-download'></i>
+                        Descargar Documento</a>
                     </div>
 
                 </div>

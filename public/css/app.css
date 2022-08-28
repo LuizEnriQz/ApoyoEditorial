@@ -19,6 +19,8 @@
   --bs-cyan: #0dcaf0;
   --bs-white: #fff;
   --bs-gray: #6c757d;
+  --bs-redcucsh: #B8525D;
+  --bs-bluecucsh:#0A4868;
   --bs-gray-dark: #343a40;
   --bs-gray-100: #f8f9fa;
   --bs-gray-200: #e9ecef;
@@ -37,6 +39,10 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
+  --bs-leer: #B8525D;
+  --bs-descargar:#0A4868;
+  --bs-leer-rgb: rgba(184, 82, 93, 1);
+  --bs-descargar-rgb: rgba(10, 72, 104, 1);
   --bs-primary-rgb: 13, 110, 253;
   --bs-secondary-rgb: 108, 117, 125;
   --bs-success-rgb: 25, 135, 84;
