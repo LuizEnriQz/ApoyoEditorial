@@ -49,7 +49,7 @@
         <div class="section-mag">
             <div class="slider">
                 <p class="magazine">
-                    <a href="{{ route('revistas.catalogo') }}" class="magazine text-decoration-none1 ">REVISTAS</a>
+                    <a href="{{ route('revistas.catalogo') }}" class="magazine text-decoration-none1 ">PUBLICACIONES</a>
                 </p>
                 <ul>
                     @if (isset($portadasRevistas))
@@ -89,8 +89,8 @@
             </div>
         </div>
 
-        <!--NOTICAS-->
-        <div class="section-news">
+        <!--NOTICAS (QUEDA OCULTO A FUTURO USO DE NOTICIAS)-->
+        {{-- <div class="section-news">
             <div class="slider">
                 <p class="news_events">
                     <a href="{{ route('noticias.catalogo') }}" class="news_events text-decoration-none1">NOTICIAS /
@@ -110,7 +110,7 @@
                     @endif
                 </ul>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 @endsection

@@ -16,9 +16,6 @@ rel="stylesheet"
 
                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalLibro-{{$lib->id}}">Ver información....</button>
 
-                   <a href="{{route('visitante.leerLibro', [$lib->id, $lib->file ] )}}" class="btn btn-primary">Leer Documento</a>
-
-                   <a href="{{route('visitante.descargarLibro', [$lib->id, $lib->file ] )}}"  class="btn btn-info">Descargar Documento</a>
                     </div>
                </div>
             </div>
@@ -72,11 +69,14 @@ rel="stylesheet"
                             {{$lib->isbn}}
                         </div>
                         @endif
+                        <a href="{{route('visitante.leerLibro', [$lib->id, $lib->file ] )}}" class="btn btn-leer">Leer Documento</a>
+
+                         <a href="{{route('visitante.descargarLibro', [$lib->id, $lib->file ] )}}"  class="btn btn-descargar">Descargar Documento</a>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <input class="btn btn-primary" data-dismiss="modal" value="Cerrar">
+                    <input class="btn btn-secondary" data-dismiss="modal" value="Cerrar">
                 </div>
             </div>
         </div>

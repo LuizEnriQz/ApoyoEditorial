@@ -37,12 +37,12 @@ rel="stylesheet"
             <div class="row m-2">
 
                 {{-- ACCESO A NOVEDADES --}}
-            <div class="col-xl-3 col-lg-6">
+            <div class="col-xl-4 col-lg-6">
                 <div class="card l-bg-cucsh-dark">
                     <div class="card-statistic-3 p-4">
                         <div class="card-icon card-icon-large"><i class="fas fa-clone"></i></div>
                         <div class="mb-4">
-                            <h5 class="card-title mb-0">Novedades</h5>
+                            <h5 class="card-title mb-0">Novedades / Colecciones</h5>
                         </div>
                         <div>
                             <a href="{{route('colecciones.visitas')}}" class="btn btn-primary" type="button">Detalles</a>
@@ -52,7 +52,7 @@ rel="stylesheet"
             </div>
 
                 {{-- ACCESO A LIBROS --}}
-            <div class="col-xl-3 col-lg-6">
+            <div class="col-xl-4 col-lg-6">
                 <div class="card l-bg-cucsh3-dark">
                     <div class="card-statistic-3 p-4">
                         <div class="card-icon card-icon-large"><i class="fas fa-book-open"></i></div>
@@ -66,8 +66,8 @@ rel="stylesheet"
                 </div>
             </div>
 
-                {{-- ACCESO A NOTICIAS --}}
-            <div class="col-xl-3 col-lg-6">
+                {{-- ACCESO A NOTICIAS (PERMENECE OCULTO PARA USO A FUTURO--}}
+            {{-- <div class="col-xl-3 col-lg-6">
                 <div class="card l-bg-cucsh3-dark">
                     <div class="card-statistic-3 p-4">
                         <div class="card-icon card-icon-large"><i class="fas fa-newspaper"></i></div>
@@ -79,15 +79,15 @@ rel="stylesheet"
                        </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
                 {{-- ACCESO A REVISTAS --}}
-            <div class="col-xl-3 col-lg-6">
+            <div class="col-xl-4 col-lg-6">
                 <div class="card l-bg-cucsh4-dark">
                     <div class="card-statistic-3 p-4">
                         <div class="card-icon card-icon-large"><i class="fas fa-file"></i></div>
                         <div class="mb-4">
-                            <h5 class="card-title mb-0">Revistas</h5>
+                            <h5 class="card-title mb-0">Publicaciones / Revistas</h5>
                         </div>
                         <div>
                             <a href="{{route('revistas.visitas')}}" class="btn btn-primary" type="button">Detalles</a>

@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-md-10 ml-4">
-            <h2>Relación de visitas y descargas de Novedades</h2>
+            <h2>Relación de visitas y descargas de Novedades / Colecciones</h2>
         </div>
         <hr>
     </div>

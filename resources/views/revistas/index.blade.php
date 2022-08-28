@@ -4,8 +4,8 @@
 
     <div class="container">
     <div class="row">
-        <div class="col-md-4 ml-3">
-            <h2>Relación de Revistas</h2>
+        <div class="col-md-9 ml-6">
+            <h2>Relación de Publicación y Revistas</h2>
         </div>
         <hr>
     </div>
@@ -13,15 +13,15 @@
     <div>
 <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
-    <th>ID</th>
+    {{-- <th>ID</th> --}}
     <th>Nombre</th>
     <th>Año</th>
     <th>Edición</th>
-    <th>Nombre del ensayo</th>
+    <th>Nombre de la Revista</th>
     <th>Autores</th>
-    <th>Descripcion</th>
+    <th>ISSN</th>
     <th>Nombre archivo PDF</th>
-    <th>Archivo de Portada</th>
+    {{-- <th>Archivo de Portada</th> --}}
     <th>Acciones</th>
     </thead>
 

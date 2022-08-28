@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-{{-- <img src="/editorial/storage/app/public/noticias_img/php_3.jpeg" /> --}}
     <div class="container">
 
         <div class="row">
@@ -12,6 +10,8 @@
             </div>
 
         </div>
+
+{{-- TABLA DE RESULTADOS DE BUSQUEDA DE LIBROS --}}
 
         <div>
             <table id="libros" class="table table-striped table-bordered" style="width:100%">
@@ -30,7 +30,10 @@
                 </tbody>
             </table>
         </div>
-        <hr>
+
+{{-- TABLA DE RESULTADOS DE BUSQUEDA DE NOTICIAS (OCULTO PARA SER UTILIZADO A FUTURO --}}
+
+        {{-- <hr>
             <div class="row">
                 <div class="col-sm-12 ml-3">
                     <h2>Relación de Noticia</h2>
@@ -45,7 +48,6 @@
 
                 <th>Titulo</th>
                 <th>Fecha</th>
-                {{-- <th>Descripcion</th> --}}
                 <th>Acciones</th>
 
                 </thead>
@@ -53,11 +55,14 @@
 
                 </tbody>
             </table>
-        </div>
+        </div> --}}
+
+{{-- TABLA DE RESULTADOS DE BUSQUEDA DE PUBLICACIONES / REVISTAS --}}
+
         <hr>
             <div class="row">
                 <div class="col-sm-12 ml-3">
-                    <h2>Relación de Revistas</h2>
+                    <h2>Relación de Publicaciones / Revistas</h2>
                 </div>
 
             </div>
@@ -67,11 +72,11 @@
                 <thead>
 
                 <th>Nombre</th>
-                <th>año</th>
-                <th>Edición</th>
-                <th>Ensayo</th>
-                <th>autores</th>
-                <th>descripcion</th>
+                {{-- <th>año</th> --}}
+                {{-- <th>Edición</th> --}}
+                <th>Nombre Revista</th>
+                {{-- <th>Autores</th> --}}
+                {{-- <th>ISSN</th> --}}
                 <th>Acciones</th>
 
                 </thead>
@@ -82,9 +87,12 @@
 
         </div>
         <hr>
+
+{{-- TABLA DE RESULTADOS DE BUSQUEDA DE NOVEDADES / COLECCIÓN --}}
+
         <div class="row">
             <div class="col-sm-12 ml-3">
-                <h2>Relación de Novedades</h2>
+                <h2>Relación de Novedades / Colección</h2>
             </div>
 
         </div>
@@ -107,59 +115,6 @@
                 </tbody>
             </table>
         </div>
-
-
-        {{-- Modal de Noticias --}}
-        {{-- <div class="modal fade" id="NoticiaModal" tabindex="-1" aria-labelledby=NoticiaModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <a href="img/1/1-1.jpg" data-lightbox="image-1">
-                        <div class="thumb">
-                            <div class="image">
-                                <img src="{{asset('/img/Cartel%20moon.jpg')}}" style="width: 600px; height: 600px;">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="modal-header"
-                        <h3 class="modal-title text-center" id="NoticiaModalLabel">
-                        </h3>
-                        <button type="button" class="btn-close" data-bs-dismiss="close" aria-label="close"></button>
-                    </div>
-
-                    <div class="modal-body" id="NoticiaModalLabel2">
-                        <img id="NoticiaImg" src="#">
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-
-
-
-
-        <!-- Modal -->
-        {{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <img src="#"  id="NoticiaImg" alt="#">
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div> --}}
-
     </div>
 
     {{-- DATA TABLE DE LIBRO --}}
@@ -200,7 +155,8 @@
     </script>
 
     {{-- DATA TABLE DE NOTICIAS --}}
-    <script>
+
+    {{-- <script>
         var data2 = @json($noticias);
         $(document).ready(function() {
             $('#noticias').DataTable( {
@@ -234,7 +190,7 @@
 
             } );
         } );
-    </script>
+    </script> --}}
 
     {{-- DATA TABLE DE REVISTAS --}}
    <script>
@@ -309,21 +265,6 @@
             } );
         } );
     </script>
-
-
-    {{-- <script >
-
-        function mostrarImg(){
-
-
-            // console.log("Prueba");
-            // console.log(params);
-            // nuevaImagen = "/editorial/storage/app/public/noticias_img/" . params["file"];
-            // console.log(nuevaImagen);
-            // $("#NoticiaImg").attr("src", nuevaImagen);
-        }
-    </script> --}}
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>

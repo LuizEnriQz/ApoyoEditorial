@@ -2,6 +2,8 @@
      {{-- <div class="sidebar-header">
         <img width="191px" height="100px" src="{{asset('img/logo_cucsh.png')}}" alt="logo">
     </div> --}}
+
+{{-- CAPTURA DE PERSONAL ADMINISTRATIVO (DIRECTIVOS Y COMITE) --}}
      <ul class="list-unstyled components">
          <li>
              <a href="#admonSubmenu" data-toggle="collapse" aria-expanded="false" class="text-white dropdown-toggle">
@@ -16,7 +18,9 @@
                  </li>
              </ul>
          </li>
-         <li>
+{{-- CAPTURA DE ARTICULOS (SE ENVIA OCULTO PARA USO A FUTURO) --}}
+
+         {{-- <li>
              <a href="#articulosSubmenu" data-toggle="collapse" aria-expanded="false" class="text-white dropdown-toggle">
                  <i class='fa fa-book'></i>
                  Artículos</a>
@@ -28,7 +32,10 @@
                      <a class="text-white" href="{{route('articulos.index')}}">Consulta de Artículo</a>
                  </li>
              </ul>
-         </li>
+         </li> --}}
+
+{{-- CAPTURA DE NOVEDADES / COLECCIÓN --}}
+
          <li>
              <a href="#coleccionSubmenu" data-toggle="collapse" aria-expanded="false" class="text-white dropdown-toggle">
                  <i class='fa fa-clone'></i>
@@ -42,6 +49,9 @@
                  </li>
              </ul>
          </li>
+
+{{-- CAPTURA DE LIBROS --}}
+
          <li>
              <a href="#librosSubmenu" data-toggle="collapse" aria-expanded="false" class="text-white dropdown-toggle">
                  <i class='fas fa-book-open'></i>
@@ -55,7 +65,10 @@
                  </li>
              </ul>
          </li>
-         <li>
+
+{{-- CAPTURA DE NOTICIAS (SE ENVIA OCULTO PARA USO A FUTURO) --}}
+
+         {{-- <li>
              <a href="#noticiasSubmenu" data-toggle="collapse" aria-expanded="false" class="text-white dropdown-toggle">
                  <i class='fa fa-newspaper'></i>
                  Noticias</a>
@@ -67,21 +80,27 @@
                      <a class="text-white" href="{{route('noticias.index')}}">Consulta de Noticia</a>
                  </li>
              </ul>
-         </li>
+         </li> --}}
+
+{{-- CAPTURA DE PUBLICACIONES / REVISTA --}}
+
          <li>
              <a href="#revistasSubmenu" data-toggle="collapse" aria-expanded="false" class="text-white dropdown-toggle">
                  <i class='fa fa-file'></i>
-                 Revistas</a>
+                 Publicaciones</a>
              <ul class="collapse list-unstyled" id="revistasSubmenu">
                  <li>
-                     <a class="text-white" href="{{route('revistas.create')}}">Captura de Revista</a>
+                     <a class="text-white" href="{{route('revistas.create')}}">Captura de Publicaciones / Revista</a>
                  </li>
                  <li>
-                     <a class="text-white" href="{{route('revistas.index')}}">Consulta de Revista</a>
+                     <a class="text-white" href="{{route('revistas.index')}}">Consulta de Publicaciones / Revista</a>
                  </li>
              </ul>
          </li>
      </ul>
+
+{{-- HOMEPAGE ADMINISTRADOR --}}
+
      <ul class="components">
          <li>
              <a href="{{route('admindash')}}" class="text-white">

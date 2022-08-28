@@ -5,16 +5,16 @@
 
      <div class="row">
          <div class="col-md-10 ml-4">
-             <h2>Relación de visitas y descargas de Revistas</h2>
+             <h2>Relación de visitas y descargas de Publicaciones / Revistas</h2>
          </div>
          <hr>
      </div>
      <div>
          <table id="example" class="table table-striped table-bordered" style="width:100%">
              <thead>
-             <th>ID</th>
+             {{-- <th>ID</th> --}}
              <th>Nombre</th>
-             <th>Descripción</th>
+             {{-- <th>ISSN</th> --}}
              <th>Relación de Visitas</th>
              <th>Relación de Descargas</th>
              </thead>

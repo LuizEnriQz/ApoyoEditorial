@@ -46,15 +46,15 @@ class RevistaController extends Controller
         }
 
             $revistas[$key] = array(
-                $value['id'],
+                // $value['id'],
                 $value['nombre'],
                 $value['anio'],
                 $value['edicion'],
-                $value['ensayo'],
+                $value['nombre_revista'],
                 $value['autores'],
-                $value['descripcion'],
+                $value['issn'],
                 $value['file'],
-                $value['portada'],
+                // $value['portada'],
                 $acciones,
             );
         }
@@ -97,9 +97,9 @@ class RevistaController extends Controller
         }
 
             $revista[$key] = array(
-                $value['id'],
+                // $value['id'],
                 $value['nombre'],
-                $value['descripcion'],
+                // $value['issn'],
                 $totalVisitas,
                 $totalDescargas,
             );
@@ -140,29 +140,46 @@ class RevistaController extends Controller
 
     public function store(Request $request)
     {
-        $validateData = $this->validate($request,[
-            'nombre'=>'required',
-            'anio'=>'required',
-            'edicion'=>'required',
-            'ensayo'=>'required',
-            'autores'=>'required',
-            'descripcion'=>'required',
-            'file'=>'required|mimes:pdf',
-            'portada'=>'required|image|mimes:jpg,jpeg,png,gif,svg',
-        ]);
+
+
+
+        if($request->input('select_pub_rev') == 'publicacion'){
+
+            $validateData = $this->validate($request,[
+                'nombre'=>'required',
+                'anio'=>'required',
+                'file'=>'required|mimes:pdf',
+                'portada'=>'required|image|mimes:jpg,jpeg,png,gif,svg',
+            ]);
+
+        }else if($request->input('select_pub_rev') == 'revista'){
+
+            $validateData = $this->validate($request,[
+                'nombre'=>'required',
+                'anio'=>'required',
+                'edicion'=>'required',
+                'nombre_revista'=>'required',
+                'autores'=>'required',
+                'issn'=>'required',
+                'categoria'=>'required',
+                'file'=>'required|mimes:pdf',
+                'portada'=>'required|image|mimes:jpg,jpeg,png,gif,svg',
+            ]);
+
+        }
 
         $revistas = new Revista();
         $revistas->nombre = $request->input('nombre');
         $revistas->anio = $request->input('anio');
         $revistas->edicion = $request->input('edicion');
-        $revistas->ensayo = $request->input('ensayo');
+        $revistas->nombre_revista = $request->input('nombre_revista');
         $revistas->autores = $request->input('autores');
-        $revistas->descripcion = $request->input('descripcion');
+        $revistas->issn = $request->input('issn');
+        $revistas->categoria = $request->input('categoria');
         $revistas->file = $request->file->getClientOriginalName();
         $revistas->portada = $request->portada->getClientOriginalName();
         $revistas->activo= 1;
         $revistas->seccion_id = 3;
-        $revistas->categoria=3;
         $revistas->save();
 
         if ($request->file);
@@ -216,9 +233,9 @@ class RevistaController extends Controller
         $revista->nombre = $request->input('nombre');
         $revista->anio = $request->input('anio');
         $revista->edicion = $request->input('edicion');
-        $revista->ensayo = $request->input('ensayo');
+        $revista->nombre_revista = $request->input('nombre_revista');
         $revista->autores = $request->input('autores');
-        $revista->descripcion = $request->input('descripcion');
+        $revista->issn = $request->input('issn');
         $revistas->file = $request->file->getClientOriginalName();
         $revistas->portada = $request->portada->getClientOriginalName();
         $revista->update();

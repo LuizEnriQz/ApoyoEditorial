@@ -42,10 +42,10 @@ class BuscarController extends Controller
             $revistas = Revista::where('activo', '=', '1')
                 ->where('id', '=', $busqueda)
                 ->orWhere('nombre', 'LIKE', '%' . $busqueda . '%')
-                ->orWhere('edicion', 'LIKE', '%' . $busqueda . '%')
-                ->orWhere('ensayo', 'LIKE', '%' . $busqueda . '%')
-                ->orWhere('autores', 'LIKE', '%' . $busqueda . '%')
-                ->orWhere('descripcion', 'LIKE', '%' . $busqueda . '%')
+                // ->orWhere('edicion', 'LIKE', '%' . $busqueda . '%')
+                ->orWhere('nombre_revista', 'LIKE', '%' . $busqueda . '%')
+                // ->orWhere('autores', 'LIKE', '%' . $busqueda . '%')
+                // ->orWhere('issn', 'LIKE', '%' . $busqueda . '%')
                 ->get();
             $revistas = $this->cargaDT($revistas,$categoria);
 
@@ -196,7 +196,7 @@ class BuscarController extends Controller
                 );
             }
 
-            //---------Mostrar Revista---------//
+            //---------Mostrar Publicaciones / Revista---------//
 
             $mostrarRevista = route('mostrarRevista', $value['id']);
             $accionesRevista = '
@@ -214,13 +214,13 @@ class BuscarController extends Controller
             if($categoria == 'revistas') {
                 $data[$key] = array(
 
-                    $value['id'],
+                    // $value['id'],
                     $value['nombre'],
-                    $value['anio'],
-                    $value['edicion'],
-                    $value['ensayo'],
-                    $value['autores'],
-                    $value['descripcion'],
+                    // $value['anio'],
+                    // $value['edicion'],
+                    $value['nombre_revista'],
+                    // $value['autores'],
+                    // $value['issn'],
                     $accionesRevista,
 
                 );

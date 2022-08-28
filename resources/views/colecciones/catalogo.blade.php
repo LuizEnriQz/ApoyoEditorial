@@ -6,7 +6,7 @@ rel="stylesheet"
 
 @include('layouts.sub-menu')
 <div class="container ">
-    <h5>NOVEDADES</h5>
+    <h5>NOVEDADES / COLECCIONES</h5>
     <div class="row">
         @foreach($novedades as $nov)
         <div class="col-md-3">
@@ -14,13 +14,9 @@ rel="stylesheet"
                 <img src="{{ '/editorial/storage/app/public/colecciones_portada/' . $nov->portada }}" alt="...">
                 <div class="d-grid gap-2">
 
-                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalNovedad-{{$nov->id}}">Ver información....</button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalNovedad-{{$nov->id}}">Ver información....</button>
                     {{-- <iframe src="{{ '/editorial/storage/app/public/colecciones_pdfs/' . $nov->file }}" alt="..." width="100%" height="500px">
                     </iframe> --}}
-
-                    <a href="{{route('visitante.leerNovedad', [$nov->id, $nov->file ] )}}" class="btn btn-primary">Leer Documento</a>
-
-                    <a href="{{route('visitante.descargarNovedad', [$nov->id, $nov->file ] )}}" class="btn btn-info">Descargar Documento</a>
                 </div>
             </div>
         </div>
@@ -47,6 +43,11 @@ rel="stylesheet"
                 </div>
                 <div class="modal-body">
                     <div class="informacionModal">
+                        @if($nov->categoria)
+                            <div class="modal-info--item">
+                                <b>Categoria:</b> {{$nov->categoria}}
+                            </div>
+                        @endif
                         @if($nov->coordinadores)
                             <div class="modal-info--item">
                                 <b>Coordinadores: </b> {{$nov->coordinadores}}
@@ -75,11 +76,14 @@ rel="stylesheet"
                             {{$nov->isbn}}
                         </div>
                         @endif
+                        <a href="{{route('visitante.leerNovedad', [$nov->id, $nov->file ] )}}" class="btn btn-leer">Leer Documento</a>
+
+                        <a href="{{route('visitante.descargarNovedad', [$nov->id, $nov->file ] )}}" class="btn btn-descargar">Descargar Documento</a>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <input class="btn btn-primary" data-dismiss="modal" value="Cerrar">
+                    <input class="btn btn-secondary" data-dismiss="modal" value="Cerrar">
                 </div>
             </div>
         </div>
