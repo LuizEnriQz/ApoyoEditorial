@@ -11,7 +11,7 @@ rel="stylesheet"
             @foreach($revistas as $rev)
            <div class="col-md-3">
               <div class="card" style="width: 15rem;">
-                <img src="{{ '/editorial/storage/app/public/revistas_portada/' . $rev->portada }}" alt="...">
+                <img src="{{ str_replace("ApoyoEditorial/public/","ApoyoEditorial/",asset('/storage/app/public/revistas_portada/' . $rev->portadas))}}" alt="...">
                     <div class="d-grid gap-2">
                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalLibro-{{$rev->id}}">Ver información....</button>
 

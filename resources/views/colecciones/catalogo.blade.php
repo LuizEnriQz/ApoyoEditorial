@@ -11,7 +11,7 @@ rel="stylesheet"
         @foreach($novedades as $nov)
         <div class="col-md-3">
             <div class="card" style="width: 15rem;">
-                <img src="{{ '/editorial/storage/app/public/colecciones_portada/' . $nov->portada }}" alt="...">
+                <img src="{{ str_replace("ApoyoEditorial/public/","ApoyoEditorial/",asset('/storage/app/public/colecciones_portada/' . $nov->portadas))}}" alt="...">
                 <div class="d-grid gap-2">
 
                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalNovedad-{{$nov->id}}">Ver información....</button>

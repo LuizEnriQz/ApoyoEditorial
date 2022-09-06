@@ -6,7 +6,7 @@
 {{-- CAPTURA DE PERSONAL ADMINISTRATIVO (DIRECTIVOS Y COMITE) --}}
      <ul class="list-unstyled components">
          <li>
-             <a href="#admonSubmenu" data-toggle="collapse" aria-expanded="false" class="text-white dropdown-toggle">
+             <a href="#admonSubmenu" data-toggle="collapse" aria-expanded="false" class="text-white dropdown-toggle w-100">
                  <i class='fa fa-user-circle'></i>
                  Administrativos</a>
              <ul class="collapse list-unstyled" id="admonSubmenu">
@@ -39,7 +39,7 @@
          <li>
              <a href="#coleccionSubmenu" data-toggle="collapse" aria-expanded="false" class="text-white dropdown-toggle">
                  <i class='fa fa-clone'></i>
-                 Novedades</a>
+                 Novedades / Colección</a>
              <ul class="collapse list-unstyled" id="coleccionSubmenu">
                  <li>
                      <a class="text-white" href="{{route('colecciones.create')}}">Captura de Novedad / Colección</a>
@@ -87,7 +87,7 @@
          <li>
              <a href="#revistasSubmenu" data-toggle="collapse" aria-expanded="false" class="text-white dropdown-toggle">
                  <i class='fa fa-file'></i>
-                 Publicaciones</a>
+                 Publicaciones / Revista</a>
              <ul class="collapse list-unstyled" id="revistasSubmenu">
                  <li>
                      <a class="text-white" href="{{route('revistas.create')}}">Captura de Publicaciones / Revista</a>
