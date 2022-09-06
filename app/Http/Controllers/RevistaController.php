@@ -237,7 +237,7 @@ class RevistaController extends Controller
         $revista->autores = $request->input('autores');
         $revista->issn = $request->input('issn');
 
-        @if(isset($request->file)){
+        if(isset($request->file)){
 
             $revistas->file = $request->file->getClientOriginalName();
             $directorioArchivo = $request->file('file')->storeAs    ('public/revistas_pdfs', $revista->file);
@@ -245,7 +245,7 @@ class RevistaController extends Controller
             $Revista_modelo->file_path = '/storage/app/public/' .   $directorioArchivo;
         }
 
-        @if(isset($request->file)){
+        if(isset($request->file)){
             $revistas->portada =    $request->portada->getClientOriginalName();
             $directorioArchivo = $request->file('file')->storeAs    ('public/revistas_portada', $revista->portada);
             $Revista_modelo = new Revista();

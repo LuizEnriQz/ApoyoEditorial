@@ -107,7 +107,7 @@ Route::get('/mostrarRevista/{id}', array(
     'uses'=>'App\Http\Controllers\RevistaController@mostrarpdf'
 ));
 
-Route::get('/mostrarColeccion{id}', array(
+Route::get('/mostrarColeccion/{id}', array(
     'as'=> 'mostrarColeccion',
     // 'middleware'=> 'auth',
     'uses'=>'App\Http\Controllers\ColeccionController@mostrarpdf'
